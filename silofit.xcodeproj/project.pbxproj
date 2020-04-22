@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0324508D4600A3EC25 /* AppDelegate.swift */; };
-		97E2AB0624508D4600A3EC25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0524508D4600A3EC25 /* SceneDelegate.swift */; };
-		97E2AB0824508D4600A3EC25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0724508D4600A3EC25 /* ViewController.swift */; };
-		97E2AB0B24508D4600A3EC25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB0924508D4600A3EC25 /* Main.storyboard */; };
+		97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */; };
 		97E2AB0D24508D4E00A3EC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */; };
 		97E2AB1024508D4E00A3EC25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB0E24508D4E00A3EC25 /* LaunchScreen.storyboard */; };
 		97E2AB1B24508D4E00A3EC25 /* silofitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB1A24508D4E00A3EC25 /* silofitTests.swift */; };
+		97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB2A245091B700A3EC25 /* BaseViewController.swift */; };
+		97E2AB2F245094B000A3EC25 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB2E245094B000A3EC25 /* Style.swift */; };
+		97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB302450993F00A3EC25 /* StyledButton.swift */; };
+		97E2AB3324509B2500A3EC25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB3224509B2500A3EC25 /* Colors.xcassets */; };
+		97E2AB3524509BAB00A3EC25 /* StyleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3424509BAB00A3EC25 /* StyleColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,15 +32,18 @@
 /* Begin PBXFileReference section */
 		97E2AB0024508D4600A3EC25 /* silofit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = silofit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E2AB0324508D4600A3EC25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		97E2AB0524508D4600A3EC25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97E2AB0724508D4600A3EC25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		97E2AB0A24508D4600A3EC25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionsViewController.swift; sourceTree = "<group>"; };
 		97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97E2AB0F24508D4E00A3EC25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E2AB1124508D4E00A3EC25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E2AB1624508D4E00A3EC25 /* silofitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = silofitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E2AB1A24508D4E00A3EC25 /* silofitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = silofitTests.swift; sourceTree = "<group>"; };
 		97E2AB1C24508D4E00A3EC25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97E2AB2A245091B700A3EC25 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		97E2AB2E245094B000A3EC25 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		97E2AB302450993F00A3EC25 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		97E2AB3224509B2500A3EC25 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		97E2AB3424509BAB00A3EC25 /* StyleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +85,9 @@
 		97E2AB0224508D4600A3EC25 /* silofit */ = {
 			isa = PBXGroup;
 			children = (
-				97E2AB0324508D4600A3EC25 /* AppDelegate.swift */,
-				97E2AB0524508D4600A3EC25 /* SceneDelegate.swift */,
-				97E2AB0724508D4600A3EC25 /* ViewController.swift */,
-				97E2AB0924508D4600A3EC25 /* Main.storyboard */,
-				97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */,
-				97E2AB0E24508D4E00A3EC25 /* LaunchScreen.storyboard */,
 				97E2AB1124508D4E00A3EC25 /* Info.plist */,
+				97E2AB2624508D7F00A3EC25 /* Source */,
+				97E2AB2524508D6300A3EC25 /* Resource */,
 			);
 			path = silofit;
 			sourceTree = "<group>";
@@ -97,6 +99,69 @@
 				97E2AB1C24508D4E00A3EC25 /* Info.plist */,
 			);
 			path = silofitTests;
+			sourceTree = "<group>";
+		};
+		97E2AB2524508D6300A3EC25 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				97E2AB3224509B2500A3EC25 /* Colors.xcassets */,
+				97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */,
+				97E2AB0E24508D4E00A3EC25 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		97E2AB2624508D7F00A3EC25 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				97E2AB0324508D4600A3EC25 /* AppDelegate.swift */,
+				97E2AB2824508DF500A3EC25 /* Models */,
+				97E2AB292450918600A3EC25 /* Protocols */,
+				97E2AB2D2450946300A3EC25 /* Utility */,
+				97E2AB2724508DE800A3EC25 /* ViewControlers */,
+				97E2AB2C245092F300A3EC25 /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		97E2AB2724508DE800A3EC25 /* ViewControlers */ = {
+			isa = PBXGroup;
+			children = (
+				97E2AB2A245091B700A3EC25 /* BaseViewController.swift */,
+				97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */,
+			);
+			path = ViewControlers;
+			sourceTree = "<group>";
+		};
+		97E2AB2824508DF500A3EC25 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		97E2AB292450918600A3EC25 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		97E2AB2C245092F300A3EC25 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97E2AB302450993F00A3EC25 /* StyledButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		97E2AB2D2450946300A3EC25 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				97E2AB2E245094B000A3EC25 /* Style.swift */,
+				97E2AB3424509BAB00A3EC25 /* StyleColor.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E2AB3324509B2500A3EC25 /* Colors.xcassets in Resources */,
 				97E2AB1024508D4E00A3EC25 /* LaunchScreen.storyboard in Resources */,
 				97E2AB0D24508D4E00A3EC25 /* Assets.xcassets in Resources */,
-				97E2AB0B24508D4600A3EC25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +265,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97E2AB0824508D4600A3EC25 /* ViewController.swift in Sources */,
+				97E2AB3524509BAB00A3EC25 /* StyleColor.swift in Sources */,
+				97E2AB2F245094B000A3EC25 /* Style.swift in Sources */,
+				97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */,
+				97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */,
 				97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */,
-				97E2AB0624508D4600A3EC25 /* SceneDelegate.swift in Sources */,
+				97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		97E2AB0924508D4600A3EC25 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97E2AB0A24508D4600A3EC25 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		97E2AB0E24508D4E00A3EC25 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -364,6 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = silofit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,7 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wfh.silofit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -381,6 +442,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = silofit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,7 +450,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wfh.silofit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
