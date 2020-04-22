@@ -17,10 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-
-        let homeViewController = AuthOptionsViewController()
-        window!.rootViewController = homeViewController
-        window!.makeKeyAndVisible()
+        self.window!.rootViewController = AuthOptionsViewController()
+        self.window!.makeKeyAndVisible()
         return true
     }
 }

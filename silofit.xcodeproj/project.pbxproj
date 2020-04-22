@@ -17,6 +17,9 @@
 		97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB302450993F00A3EC25 /* StyledButton.swift */; };
 		97E2AB3324509B2500A3EC25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB3224509B2500A3EC25 /* Colors.xcassets */; };
 		97E2AB3524509BAB00A3EC25 /* StyleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3424509BAB00A3EC25 /* StyleColor.swift */; };
+		97E2AB392450B88900A3EC25 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB382450B88900A3EC25 /* AuthenticationManager.swift */; };
+		97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */; };
+		97E2AB3D2450C2E300A3EC25 /* StyledNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		97E2AB302450993F00A3EC25 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		97E2AB3224509B2500A3EC25 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		97E2AB3424509BAB00A3EC25 /* StyleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleColor.swift; sourceTree = "<group>"; };
+		97E2AB382450B88900A3EC25 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				97E2AB2A245091B700A3EC25 /* BaseViewController.swift */,
+				97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */,
 				97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */,
+				97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -158,10 +166,19 @@
 		97E2AB2D2450946300A3EC25 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				97E2AB372450B86B00A3EC25 /* Style */,
+				97E2AB382450B88900A3EC25 /* AuthenticationManager.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		97E2AB372450B86B00A3EC25 /* Style */ = {
+			isa = PBXGroup;
+			children = (
 				97E2AB2E245094B000A3EC25 /* Style.swift */,
 				97E2AB3424509BAB00A3EC25 /* StyleColor.swift */,
 			);
-			path = Utility;
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,10 +284,13 @@
 			files = (
 				97E2AB3524509BAB00A3EC25 /* StyleColor.swift in Sources */,
 				97E2AB2F245094B000A3EC25 /* Style.swift in Sources */,
+				97E2AB392450B88900A3EC25 /* AuthenticationManager.swift in Sources */,
 				97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */,
+				97E2AB3D2450C2E300A3EC25 /* StyledNavigationController.swift in Sources */,
 				97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */,
 				97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */,
 				97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */,
+				97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

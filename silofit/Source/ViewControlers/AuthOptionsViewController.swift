@@ -10,12 +10,12 @@ import UIKit
 
 class AuthOptionsViewController: BaseViewController {
 
-    private lazy var signupButton: UIButton = {
+    private let signupButton: UIButton = {
         let button = StyledButton(style: .dark, title: "Sign In")
         return button
     }()
     
-    private lazy var loginButton: UIButton = {
+    private let loginButton: UIButton = {
         let button = StyledButton(style: .light, title: "Join Now")
         return button
     }()
@@ -44,11 +44,18 @@ class AuthOptionsViewController: BaseViewController {
         stackView.topAnchor.constraint(greaterThanOrEqualTo: self.view.safeAreaLayoutGuide.topAnchor,
                                        constant: verticalSpacing).isActive = true
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+    override func viewDidAppear(_ animated: Bool) {
+
+        super.viewDidAppear(animated)
+        if AuthenticationManager.shared.isLogin {
+            let navigationViewController = StyledNavigationController(rootViewController: MapViewController())
+            navigationViewController.modalTransitionStyle = .flipHorizontal
+            navigationViewController.modalPresentationStyle = .fullScreen
+            self.present(navigationViewController,
+                         animated: true,
+                         completion: nil)
+        }
+    }
 }
 
