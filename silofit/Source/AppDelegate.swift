@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.rootViewController = AuthOptionsViewController()
         self.window!.makeKeyAndVisible()
+
+        FirebaseApp.configure()
+
         return true
     }
 }
