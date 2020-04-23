@@ -22,6 +22,11 @@
 		97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */; };
 		97E2AB3D2450C2E300A3EC25 /* StyledNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */; };
 		97E2AB3F2450D14F00A3EC25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB3E2450D14F00A3EC25 /* GoogleService-Info.plist */; };
+		97E2AB412450DBDF00A3EC25 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB402450DBDF00A3EC25 /* Space.swift */; };
+		97E2AB43245113F700A3EC25 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB42245113F700A3EC25 /* Amenity.swift */; };
+		97E2AB452451142300A3EC25 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB442451142300A3EC25 /* Equipment.swift */; };
+		97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */; };
+		97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB472451148900A3EC25 /* Identifiable.swift */; };
 		C520B7D72292AC9C3A010C12 /* Pods_silofit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6920EE4F7F70776CD1360AC1 /* Pods_silofit.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +62,11 @@
 		97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledNavigationController.swift; sourceTree = "<group>"; };
 		97E2AB3E2450D14F00A3EC25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97E2AB402450DBDF00A3EC25 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		97E2AB42245113F700A3EC25 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
+		97E2AB442451142300A3EC25 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseDefaultCodable.swift; sourceTree = "<group>"; };
+		97E2AB472451148900A3EC25 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		C39AD0A96047AA8E30E95C87 /* Pods-silofit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofit.debug.xcconfig"; path = "Target Support Files/Pods-silofit/Pods-silofit.debug.xcconfig"; sourceTree = "<group>"; };
 		F037964DA48AEFDA3B2BAF7C /* Pods_silofitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_silofitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AEC4936E74B3C368300BA4 /* Pods-silofitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofitTests.release.xcconfig"; path = "Target Support Files/Pods-silofitTests/Pods-silofitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +189,9 @@
 		97E2AB2824508DF500A3EC25 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				97E2AB402450DBDF00A3EC25 /* Space.swift */,
+				97E2AB42245113F700A3EC25 /* Amenity.swift */,
+				97E2AB442451142300A3EC25 /* Equipment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +199,8 @@
 		97E2AB292450918600A3EC25 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */,
+				97E2AB472451148900A3EC25 /* Identifiable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -385,13 +400,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E2AB412450DBDF00A3EC25 /* Space.swift in Sources */,
 				97E2AB3524509BAB00A3EC25 /* StyleColor.swift in Sources */,
+				97E2AB452451142300A3EC25 /* Equipment.swift in Sources */,
 				97E2AB2F245094B000A3EC25 /* Style.swift in Sources */,
 				97E2AB392450B88900A3EC25 /* AuthenticationManager.swift in Sources */,
+				97E2AB43245113F700A3EC25 /* Amenity.swift in Sources */,
 				97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */,
 				97E2AB3D2450C2E300A3EC25 /* StyledNavigationController.swift in Sources */,
 				97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */,
+				97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */,
 				97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */,
+				97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */,
 				97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */,
 				97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */,
 			);
