@@ -11,6 +11,8 @@ import MapKit
 
 class MapViewController: BaseViewController {
 
+    var viewModel = MapViewControllerViewModel(spaces: [])
+
     private let mapView: MKMapView = {
 
         let mapView = MKMapView()
@@ -41,6 +43,37 @@ class MapViewController: BaseViewController {
     }
 
 
+    override func viewDidAppear(_ animated: Bool) {
+
+        super.viewDidAppear(animated)
+
+        if !self.viewModel.isValid {
+            self.loadSpaces { (spaces) in
+                self.viewModel = MapViewControllerViewModel(spaces: spaces)
+            }
+        }
+    }
+
+    // MARK: - Data Fetching
+    func loadSpaces(completion: @escaping ([Space]) -> Void ) {
+
+        DataManager.fetchAllSpaces { (result) in
+            switch result {
+            case .success(let spaces):
+                completion(spaces ?? [])
+            case .failure(let error):
+                let retryAction = UIAlertAction(title: "Retry", style: .default) { (_) in
+                    self.loadSpaces(completion: completion)
+                }
+                self.presentAlert(forError: error,
+                                  withTitle: "Cannot load spaces...",
+                                  action: retryAction)
+                completion([])
+            }
+        }
+
+    }
+
     // MARK: - Bar Button Actions
     @objc private func logoutButtonTouchUpInside() {
 
@@ -59,9 +92,4 @@ class MapViewController: BaseViewController {
         
         print("Switch to list view")
     }
-}
-
-
-extension MapViewController: MKMapViewDelegate {
-    
 }

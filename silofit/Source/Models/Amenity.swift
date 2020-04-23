@@ -10,7 +10,7 @@ import Foundation
 
 enum Amenity: String, CaseDefaultCodable {
 
-    static var defaultCase: Amenity = .unknown
+    static let defaultCase: Amenity = .unknown
 
     case unknown
 
@@ -34,6 +34,7 @@ enum Amenity: String, CaseDefaultCodable {
     case shower
     case speakers
     case storageLocker = "storage_locker"
+    case towels
     case tv
     case water
     case whiteboard

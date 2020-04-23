@@ -10,11 +10,13 @@ import Foundation
 
 struct Space: Codable, Identifiable {
 
-    enum Status: String, Codable {
+    enum Status: String, Codable, CaseDefaultCodable {
+
+        static let defaultCase: Status = .unknown
 
         case unknown
+        case comingSoon = "coming_soon"
         case opened
-        case comingSoon
     }
 
     let identifier: String?

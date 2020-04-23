@@ -25,7 +25,7 @@ public extension Identifiable {
     static func == (lhs: Self, rhs: Self) -> Bool {
 
         guard let leftId = lhs.identifier, let rightId = rhs.identifier else {
-            false
+            return false
         }
         return leftId == rightId
     }

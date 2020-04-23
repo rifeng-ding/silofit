@@ -3,6 +3,7 @@ use_frameworks!
 
 target 'silofit' do
   pod 'Firebase/Database', '~> 6.2'
+  pod 'CodableFirebase', '~> 0.2'
 
   target 'silofitTests' do
     inherit! :search_paths
