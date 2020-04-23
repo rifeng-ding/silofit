@@ -13,6 +13,8 @@ final class StyleColor {
     private enum Name: String {
         case border
         case light
+        case pinRed
+        case pinGreen
         case textFieldBackground
         case theme
     }
@@ -31,6 +33,14 @@ final class StyleColor {
 
     static var textFieldBackground: UIColor {
         return self.color(forName: Name.textFieldBackground.rawValue)!
+    }
+
+    static var pinRed: UIColor {
+        return self.color(forName: Name.pinRed.rawValue)!
+    }
+
+    static var pinGreen: UIColor {
+        return self.color(forName: Name.pinGreen.rawValue)!
     }
 
     static private func color(forName name: String) -> UIColor? {
