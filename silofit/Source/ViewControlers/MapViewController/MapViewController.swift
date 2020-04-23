@@ -74,15 +74,15 @@ class MapViewController: BaseViewController {
     // MARK: - Data Fetching
     func loadSpaces(completion: @escaping ([Space]) -> Void ) {
 
-        DataManager.fetchAllSpaces { (result) in
+        DataManager.fetchAllSpaces { [weak self] (result) in
             switch result {
             case .success(let spaces):
                 completion(spaces ?? [])
             case .failure(let error):
                 let retryAction = UIAlertAction(title: "Retry", style: .default) { (_) in
-                    self.loadSpaces(completion: completion)
+                    self?.loadSpaces(completion: completion)
                 }
-                self.presentAlert(forError: error,
+                self?.presentAlert(forError: error,
                                   withTitle: "Cannot load spaces...",
                                   action: retryAction)
                 completion([])
@@ -91,18 +91,34 @@ class MapViewController: BaseViewController {
 
     }
 
+    private func logout() {
+        switch AuthenticationManager.shared.logout() {
+        case .success(_):
+            self.dismiss(animated: true, completion: nil)
+        case .failure(let error):
+            // TODO: not sure whether this is the correct error handling
+            let action = UIAlertAction(title: "OK", style: .default) { [weak self] (_) in
+                self?.dismiss(animated: true, completion: nil)
+            }
+            self.presentAlert(forError: error, withTitle: "Please re-login", action: action)
+        }
+    }
+
     // MARK: - Bar Button Actions
     @objc private func logoutButtonTouchUpInside() {
 
-        AuthenticationManager.shared.logout { (error) in
-            guard let error = error else {
-                self.dismiss(animated: true, completion: nil)
-                return
-            }
-            print("Logout failed: \(error.localizedDescription)")
-            // TODO: do a alert then dismiss
-            self.dismiss(animated: true, completion: nil)
+        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { [weak self] (_) in
+            self?.logout()
         }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        let alertController = UIAlertController(title: nil,
+                                                message: nil,
+                                                preferredStyle: .actionSheet)
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     @objc private func listViewButtonTouchUpInside() {

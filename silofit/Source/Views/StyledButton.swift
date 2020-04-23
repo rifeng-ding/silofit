@@ -46,10 +46,18 @@ class StyledButton: UIButton {
     
     let style: Style
 
-    init(style: Style, title: String) {
+    init(style: Style,
+         title: String) {
 
         self.style = style
         super.init(frame: .zero)
+
+        self.setupUI(forStyle: style)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.setTitle(title, for: .normal)
+    }
+
+    private func setupUI(forStyle style: Style) {
 
         self.layer.cornerRadius = CornerRadius.regular
         let titleColor = style.titleColor
@@ -71,10 +79,6 @@ class StyledButton: UIButton {
 
         self.heightAnchor.constraint(equalToConstant: Self.defaultHeight).isActive = true
         self.layer.cornerRadius = Self.defaultHeight / 2
-
-        self.translatesAutoresizingMaskIntoConstraints = false
-
-        self.setTitle(title, for: .normal)
     }
 
     required init?(coder: NSCoder) {

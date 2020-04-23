@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3719E96E3B3BC022677ABBE2 /* Pods_silofitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F037964DA48AEFDA3B2BAF7C /* Pods_silofitTests.framework */; };
+		970EB20A2452131400AB4940 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970EB2092452131400AB4940 /* AuthenticationViewController.swift */; };
+		970EB20C245213A900AB4940 /* StyledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970EB20B245213A900AB4940 /* StyledTextField.swift */; };
 		97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0324508D4600A3EC25 /* AppDelegate.swift */; };
 		97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */; };
 		97E2AB0D24508D4E00A3EC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		5D9E2AD0738BD31A871E597A /* Pods-silofitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofitTests.debug.xcconfig"; path = "Target Support Files/Pods-silofitTests/Pods-silofitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6920EE4F7F70776CD1360AC1 /* Pods_silofit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_silofit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6548E19E8DFEF7665C3DC4 /* Pods-silofit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofit.release.xcconfig"; path = "Target Support Files/Pods-silofit/Pods-silofit.release.xcconfig"; sourceTree = "<group>"; };
+		970EB2092452131400AB4940 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		970EB20B245213A900AB4940 /* StyledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledTextField.swift; sourceTree = "<group>"; };
 		97E2AB0024508D4600A3EC25 /* silofit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = silofit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E2AB0324508D4600A3EC25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionsViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		970EB208245212F000AB4940 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */,
+				970EB2092452131400AB4940 /* AuthenticationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		97E2AAF724508D4600A3EC25 = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +201,7 @@
 			children = (
 				97E2AB2A245091B700A3EC25 /* BaseViewController.swift */,
 				97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */,
-				97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */,
+				970EB208245212F000AB4940 /* Authentication */,
 				97E2AB4C2451C32C00A3EC25 /* MapViewController */,
 			);
 			path = ViewControlers;
@@ -218,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				97E2AB302450993F00A3EC25 /* StyledButton.swift */,
+				970EB20B245213A900AB4940 /* StyledTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -435,8 +449,10 @@
 				97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */,
 				97E2AB4B2451176800A3EC25 /* DataManager.swift in Sources */,
 				97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */,
+				970EB20A2452131400AB4940 /* AuthenticationViewController.swift in Sources */,
 				97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */,
 				97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */,
+				970EB20C245213A900AB4940 /* StyledTextField.swift in Sources */,
 				97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
