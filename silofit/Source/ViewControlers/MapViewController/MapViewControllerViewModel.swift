@@ -22,7 +22,7 @@ class MapViewControllerViewModel: ViewModel {
         self.spaces = spaces
     }
 
-    var mapAnnotations: [MKPointAnnotation] {
+    lazy private(set) var mapAnnotations: [MKPointAnnotation] = {
 
         return self.spaces.compactMap { (space) -> MKPointAnnotation? in
 
@@ -34,5 +34,5 @@ class MapViewControllerViewModel: ViewModel {
             pointAnnotation.title = space.name
             return pointAnnotation
         }
-    }
+    }()
 }

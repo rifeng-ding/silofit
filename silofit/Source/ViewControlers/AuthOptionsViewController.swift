@@ -49,13 +49,18 @@ class AuthOptionsViewController: BaseViewController {
 
         super.viewDidAppear(animated)
         if AuthenticationManager.shared.isLogin {
-            let navigationViewController = StyledNavigationController(rootViewController: MapViewController())
-            navigationViewController.modalTransitionStyle = .flipHorizontal
-            navigationViewController.modalPresentationStyle = .fullScreen
-            self.present(navigationViewController,
-                         animated: true,
-                         completion: nil)
+            self.presentMapViewController()
         }
+    }
+
+    private func presentMapViewController() {
+
+        let navigationViewController = StyledNavigationController(rootViewController: MapViewController())
+        navigationViewController.modalTransitionStyle = .flipHorizontal
+        navigationViewController.modalPresentationStyle = .fullScreen
+        self.present(navigationViewController,
+                     animated: true,
+                     completion: nil)
     }
 }
 
