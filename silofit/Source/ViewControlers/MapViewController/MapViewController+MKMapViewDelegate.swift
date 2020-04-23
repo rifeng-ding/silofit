@@ -28,7 +28,7 @@ extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
-        guard annotation is MKPointAnnotation else {
+        guard let annotation = annotation as? SpacePointAnnotation else {
             return nil
         }
 
@@ -42,6 +42,9 @@ extension MapViewController: MKMapViewDelegate {
         } else {
             annotationView?.annotation = annotation
         }
+
+        let tintColor = self.viewModel.annotationViewColor(forSpaceWithIdentifer: annotation.spaceIdentifer)
+        (annotationView as? MKMarkerAnnotationView)?.markerTintColor = tintColor
 
         return annotationView
     }
