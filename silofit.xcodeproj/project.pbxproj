@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3719E96E3B3BC022677ABBE2 /* Pods_silofitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F037964DA48AEFDA3B2BAF7C /* Pods_silofitTests.framework */; };
 		97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0324508D4600A3EC25 /* AppDelegate.swift */; };
 		97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */; };
 		97E2AB0D24508D4E00A3EC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */; };
@@ -17,6 +18,20 @@
 		97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB302450993F00A3EC25 /* StyledButton.swift */; };
 		97E2AB3324509B2500A3EC25 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB3224509B2500A3EC25 /* Colors.xcassets */; };
 		97E2AB3524509BAB00A3EC25 /* StyleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3424509BAB00A3EC25 /* StyleColor.swift */; };
+		97E2AB392450B88900A3EC25 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB382450B88900A3EC25 /* AuthenticationManager.swift */; };
+		97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */; };
+		97E2AB3D2450C2E300A3EC25 /* StyledNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */; };
+		97E2AB3F2450D14F00A3EC25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB3E2450D14F00A3EC25 /* GoogleService-Info.plist */; };
+		97E2AB412450DBDF00A3EC25 /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB402450DBDF00A3EC25 /* Space.swift */; };
+		97E2AB43245113F700A3EC25 /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB42245113F700A3EC25 /* Amenity.swift */; };
+		97E2AB452451142300A3EC25 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB442451142300A3EC25 /* Equipment.swift */; };
+		97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */; };
+		97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB472451148900A3EC25 /* Identifiable.swift */; };
+		97E2AB4B2451176800A3EC25 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4A2451176800A3EC25 /* DataManager.swift */; };
+		97E2AB4E2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */; };
+		97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */; };
+		97E2AB522451C7B500A3EC25 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB512451C7B500A3EC25 /* ViewModel.swift */; };
+		C520B7D72292AC9C3A010C12 /* Pods_silofit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6920EE4F7F70776CD1360AC1 /* Pods_silofit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D9E2AD0738BD31A871E597A /* Pods-silofitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofitTests.debug.xcconfig"; path = "Target Support Files/Pods-silofitTests/Pods-silofitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6920EE4F7F70776CD1360AC1 /* Pods_silofit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_silofit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C6548E19E8DFEF7665C3DC4 /* Pods-silofit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofit.release.xcconfig"; path = "Target Support Files/Pods-silofit/Pods-silofit.release.xcconfig"; sourceTree = "<group>"; };
 		97E2AB0024508D4600A3EC25 /* silofit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = silofit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E2AB0324508D4600A3EC25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionsViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +62,22 @@
 		97E2AB302450993F00A3EC25 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		97E2AB3224509B2500A3EC25 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		97E2AB3424509BAB00A3EC25 /* StyleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleColor.swift; sourceTree = "<group>"; };
+		97E2AB382450B88900A3EC25 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledNavigationController.swift; sourceTree = "<group>"; };
+		97E2AB3E2450D14F00A3EC25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97E2AB402450DBDF00A3EC25 /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		97E2AB42245113F700A3EC25 /* Amenity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
+		97E2AB442451142300A3EC25 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseDefaultCodable.swift; sourceTree = "<group>"; };
+		97E2AB472451148900A3EC25 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		97E2AB4A2451176800A3EC25 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
+		97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerViewModel.swift; sourceTree = "<group>"; };
+		97E2AB512451C7B500A3EC25 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		C39AD0A96047AA8E30E95C87 /* Pods-silofit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofit.debug.xcconfig"; path = "Target Support Files/Pods-silofit/Pods-silofit.debug.xcconfig"; sourceTree = "<group>"; };
+		F037964DA48AEFDA3B2BAF7C /* Pods_silofitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_silofitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1AEC4936E74B3C368300BA4 /* Pods-silofitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofitTests.release.xcconfig"; path = "Target Support Files/Pods-silofitTests/Pods-silofitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C520B7D72292AC9C3A010C12 /* Pods_silofit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,18 +93,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3719E96E3B3BC022677ABBE2 /* Pods_silofitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3420591D621CA92AD9196B8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6920EE4F7F70776CD1360AC1 /* Pods_silofit.framework */,
+				F037964DA48AEFDA3B2BAF7C /* Pods_silofitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BB369B87C8F60104E11BD60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C39AD0A96047AA8E30E95C87 /* Pods-silofit.debug.xcconfig */,
+				8C6548E19E8DFEF7665C3DC4 /* Pods-silofit.release.xcconfig */,
+				5D9E2AD0738BD31A871E597A /* Pods-silofitTests.debug.xcconfig */,
+				F1AEC4936E74B3C368300BA4 /* Pods-silofitTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		97E2AAF724508D4600A3EC25 = {
 			isa = PBXGroup;
 			children = (
 				97E2AB0224508D4600A3EC25 /* silofit */,
 				97E2AB1924508D4E00A3EC25 /* silofitTests */,
 				97E2AB0124508D4600A3EC25 /* Products */,
+				7BB369B87C8F60104E11BD60 /* Pods */,
+				3420591D621CA92AD9196B8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +162,7 @@
 		97E2AB2524508D6300A3EC25 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				97E2AB3E2450D14F00A3EC25 /* GoogleService-Info.plist */,
 				97E2AB3224509B2500A3EC25 /* Colors.xcassets */,
 				97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */,
 				97E2AB0E24508D4E00A3EC25 /* LaunchScreen.storyboard */,
@@ -128,7 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				97E2AB2A245091B700A3EC25 /* BaseViewController.swift */,
+				97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */,
 				97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */,
+				97E2AB4C2451C32C00A3EC25 /* MapViewController */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -136,6 +197,9 @@
 		97E2AB2824508DF500A3EC25 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				97E2AB402450DBDF00A3EC25 /* Space.swift */,
+				97E2AB42245113F700A3EC25 /* Amenity.swift */,
+				97E2AB442451142300A3EC25 /* Equipment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,6 +207,9 @@
 		97E2AB292450918600A3EC25 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				97E2AB512451C7B500A3EC25 /* ViewModel.swift */,
+				97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */,
+				97E2AB472451148900A3EC25 /* Identifiable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -158,10 +225,30 @@
 		97E2AB2D2450946300A3EC25 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				97E2AB372450B86B00A3EC25 /* Style */,
+				97E2AB382450B88900A3EC25 /* AuthenticationManager.swift */,
+				97E2AB4A2451176800A3EC25 /* DataManager.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		97E2AB372450B86B00A3EC25 /* Style */ = {
+			isa = PBXGroup;
+			children = (
 				97E2AB2E245094B000A3EC25 /* Style.swift */,
 				97E2AB3424509BAB00A3EC25 /* StyleColor.swift */,
 			);
-			path = Utility;
+			path = Style;
+			sourceTree = "<group>";
+		};
+		97E2AB4C2451C32C00A3EC25 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */,
+				97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */,
+				97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */,
+			);
+			path = MapViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97E2AB1F24508D4E00A3EC25 /* Build configuration list for PBXNativeTarget "silofit" */;
 			buildPhases = (
+				B5800ABAF3BE75EF2EA076A4 /* [CP] Check Pods Manifest.lock */,
 				97E2AAFC24508D4600A3EC25 /* Sources */,
 				97E2AAFD24508D4600A3EC25 /* Frameworks */,
 				97E2AAFE24508D4600A3EC25 /* Resources */,
+				254374A011F0EF5B8AFC2923 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97E2AB2224508D4E00A3EC25 /* Build configuration list for PBXNativeTarget "silofitTests" */;
 			buildPhases = (
+				B84BA019183A2160778A278A /* [CP] Check Pods Manifest.lock */,
 				97E2AB1224508D4E00A3EC25 /* Sources */,
 				97E2AB1324508D4E00A3EC25 /* Frameworks */,
 				97E2AB1424508D4E00A3EC25 /* Resources */,
@@ -246,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97E2AB3324509B2500A3EC25 /* Colors.xcassets in Resources */,
+				97E2AB3F2450D14F00A3EC25 /* GoogleService-Info.plist in Resources */,
 				97E2AB1024508D4E00A3EC25 /* LaunchScreen.storyboard in Resources */,
 				97E2AB0D24508D4E00A3EC25 /* Assets.xcassets in Resources */,
 			);
@@ -260,17 +351,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		254374A011F0EF5B8AFC2923 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-silofit/Pods-silofit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-silofit/Pods-silofit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-silofit/Pods-silofit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5800ABAF3BE75EF2EA076A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-silofit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B84BA019183A2160778A278A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-silofitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		97E2AAFC24508D4600A3EC25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E2AB412450DBDF00A3EC25 /* Space.swift in Sources */,
 				97E2AB3524509BAB00A3EC25 /* StyleColor.swift in Sources */,
+				97E2AB452451142300A3EC25 /* Equipment.swift in Sources */,
 				97E2AB2F245094B000A3EC25 /* Style.swift in Sources */,
+				97E2AB392450B88900A3EC25 /* AuthenticationManager.swift in Sources */,
+				97E2AB522451C7B500A3EC25 /* ViewModel.swift in Sources */,
+				97E2AB43245113F700A3EC25 /* Amenity.swift in Sources */,
 				97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */,
+				97E2AB3D2450C2E300A3EC25 /* StyledNavigationController.swift in Sources */,
+				97E2AB4E2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift in Sources */,
 				97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */,
+				97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */,
 				97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */,
+				97E2AB4B2451176800A3EC25 /* DataManager.swift in Sources */,
+				97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */,
+				97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */,
 				97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */,
+				97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +587,7 @@
 		};
 		97E2AB2024508D4E00A3EC25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C39AD0A96047AA8E30E95C87 /* Pods-silofit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -438,6 +606,7 @@
 		};
 		97E2AB2124508D4E00A3EC25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C6548E19E8DFEF7665C3DC4 /* Pods-silofit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -456,6 +625,7 @@
 		};
 		97E2AB2324508D4E00A3EC25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D9E2AD0738BD31A871E597A /* Pods-silofitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -477,6 +647,7 @@
 		};
 		97E2AB2424508D4E00A3EC25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1AEC4936E74B3C368300BA4 /* Pods-silofitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
