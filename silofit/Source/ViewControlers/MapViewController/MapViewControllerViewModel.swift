@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class MapViewControllerViewModel: ViewModel {
 
@@ -19,5 +20,19 @@ class MapViewControllerViewModel: ViewModel {
 
     init(spaces:[Space]) {
         self.spaces = spaces
+    }
+
+    var mapAnnotations: [MKPointAnnotation] {
+
+        return self.spaces.compactMap { (space) -> MKPointAnnotation? in
+
+            guard let coordinate = space.coordinate else {
+                return nil
+            }
+            let pointAnnotation = MKPointAnnotation()
+            pointAnnotation.coordinate = coordinate
+            pointAnnotation.title = space.name
+            return pointAnnotation
+        }
     }
 }

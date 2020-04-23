@@ -11,9 +11,18 @@ import MapKit
 
 class MapViewController: BaseViewController {
 
-    var viewModel = MapViewControllerViewModel(spaces: [])
+    var viewModel = MapViewControllerViewModel(spaces: []) {
+        
+        didSet {
+            self.updateAnntations(from: oldValue.mapAnnotations,
+                                  to: self.viewModel.mapAnnotations)
+        }
+    }
 
-    private let mapView: MKMapView = {
+    let locationManager = CLLocationManager()
+    let defaultCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+
+    private(set) var mapView: MKMapView = {
 
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +51,13 @@ class MapViewController: BaseViewController {
         self.navigationItem.rightBarButtonItem = listViewButton
     }
 
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            self.locationManager.requestWhenInUseAuthorization()
+        }
+    }
 
     override func viewDidAppear(_ animated: Bool) {
 
@@ -52,6 +68,7 @@ class MapViewController: BaseViewController {
                 self.viewModel = MapViewControllerViewModel(spaces: spaces)
             }
         }
+        self.mapView.showsUserLocation = true
     }
 
     // MARK: - Data Fetching

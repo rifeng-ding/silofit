@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct Space: Codable, Identifiable {
 
@@ -39,6 +40,16 @@ struct Space: Codable, Identifiable {
     let squareFootage: Int?
     let status: Status
     let timezone: String?
+
+    var coordinate: CLLocationCoordinate2D? {
+
+        guard let latitude = self.latitude, let longitude = self.longitude else {
+            return nil
+        }
+
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        return CLLocationCoordinate2DIsValid(coordinate) ? coordinate : nil
+    }
 
     enum CodingKeys: String, CodingKey {
         case address
