@@ -136,6 +136,7 @@ class AuthenticationViewController: BaseViewController {
 
     // MARK: - Selector Methods
     @objc private func cancelButtonTouchUpInside() {
+        
         self.dismiss(animated: true, completion: nil)
     }
 

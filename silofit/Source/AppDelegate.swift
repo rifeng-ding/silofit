@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        // Firebase has to be initialized before showing AuthOptionsViewController
+        // Firebase has to be initialized before showing AuthOptionsViewController.
+        // Otherwise it would crash becuase AuthOptionsViewController uses FirebaseAuth
         FirebaseApp.configure()
 
         self.window = UIWindow(frame: UIScreen.main.bounds)

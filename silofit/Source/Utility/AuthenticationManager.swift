@@ -20,13 +20,16 @@ final class AuthenticationManager {
     static let shared = AuthenticationManager()
 
     var authStateChangeHandler: AuthStateDidChangeListenerHandle?
+
     init() {
+
         self.authStateChangeHandler = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             self?.stateUpdatingDelegate?.authStateDidChange()
         }
     }
 
     deinit {
+
         if let authStateChangeHandler = authStateChangeHandler {
             Auth.auth().removeStateDidChangeListener(authStateChangeHandler)
         }
@@ -50,8 +53,12 @@ final class AuthenticationManager {
     func createAccount(withEmail email: String,
                        password: String,
                        completion: @escaping ((Error?) -> Void)) {
-        Auth.auth().createUser(withEmail: email,
-                               password: password) { (_, error) in
+
+        Auth.auth().createUser(
+            withEmail: email,
+            password: password
+        ) { (_, error) in
+
             completion(error)
         }
     }
@@ -59,7 +66,12 @@ final class AuthenticationManager {
     func login(withEmail email: String,
                password: String,
                completion: @escaping ((Error?) -> Void)) {
-        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
+
+        Auth.auth().signIn(
+            withEmail: email,
+            password: password
+        ) { (_, error) in
+
             completion(error)
         }
     }
@@ -68,6 +80,7 @@ final class AuthenticationManager {
 extension String {
 
     var isValidEmailAddress: Bool {
+        
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: self)

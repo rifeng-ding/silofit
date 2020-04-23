@@ -11,12 +11,14 @@ import UIKit
 class AuthOptionsViewController: BaseViewController {
 
     private let loginButton: StyledButton = {
+        
         let button = StyledButton(style: .dark, title: "Sign In")
         button.addTarget(self, action: #selector(buttonTouchUp), for: .touchUpInside)
         return button
     }()
     
     private let signupButton: StyledButton = {
+
         let button = StyledButton(style: .light, title: "Join Now")
         button.addTarget(self, action: #selector(buttonTouchUp), for: .touchUpInside)
         return button
@@ -50,6 +52,7 @@ class AuthOptionsViewController: BaseViewController {
     }
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
         AuthenticationManager.shared.stateUpdatingDelegate = self
     }
@@ -82,6 +85,7 @@ class AuthOptionsViewController: BaseViewController {
 
     // MARK: - Button Actions
     @objc private func buttonTouchUp(sender: StyledButton) {
+
         var mode: AuthenticationViewController.Mode?
         switch sender {
         case self.loginButton:
