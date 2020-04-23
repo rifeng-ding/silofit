@@ -31,7 +31,9 @@ class AuthOptionsViewController: BaseViewController {
         stackView.axis = .vertical
         stackView.spacing = Spacing.large
 
+        self.signupButton.isEnabled = false
         stackView.addArrangedSubview(self.signupButton)
+        self.loginButton.isEnabled = false
         stackView.addArrangedSubview(self.loginButton)
 
         self.view.addSubview(stackView)
@@ -40,22 +42,35 @@ class AuthOptionsViewController: BaseViewController {
         stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,
                                             constant: -Spacing.large).isActive = true
 
-        let verticalSpacing = self.keyWindowSafeAreaInsets.top == 0 ? Spacing.regular : 0
+        let verticalSpacing = self.keyWindowSafeAreaInsets.bottom == 0 ? Spacing.large : 0
         stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                          constant: verticalSpacing).isActive = true
+                                          constant: -verticalSpacing).isActive = true
         stackView.topAnchor.constraint(greaterThanOrEqualTo: self.view.safeAreaLayoutGuide.topAnchor,
                                        constant: verticalSpacing).isActive = true
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AuthenticationManager.shared.stateUpdatingDelegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
 
         super.viewDidAppear(animated)
-        if AuthenticationManager.shared.isLogin {
-            self.presentMapViewController()
-        }
+        self.presentMapViewControllerIfNeeded()
     }
 
-    private func presentMapViewController() {
+    private func presentMapViewControllerIfNeeded() {
+
+        guard AuthenticationManager.shared.isLogin else {
+            self.loginButton.isEnabled = true
+            self.signupButton.isEnabled = true
+            return
+        }
+
+        // this is to prevent user tap the button again during the transition
+        self.loginButton.isEnabled = false
+        self.signupButton.isEnabled = false
 
         let navigationViewController = StyledNavigationController(rootViewController: MapViewController())
         navigationViewController.modalTransitionStyle = .flipHorizontal
@@ -86,3 +101,16 @@ class AuthOptionsViewController: BaseViewController {
     }
 }
 
+extension AuthOptionsViewController: AuthStateUpdatingDelegate {
+
+    func authStateDidChange() {
+
+        if self.presentedViewController != nil {
+            self.dismiss(animated: true) {
+                self.presentMapViewControllerIfNeeded()
+            }
+        } else {
+            self.presentMapViewControllerIfNeeded()
+        }
+    }
+}

@@ -27,7 +27,7 @@ class AuthenticationViewController: BaseViewController {
         var title: String {
             switch self {
             case .signup:
-                return "Almost there!"
+                return "Welcome Aboard!"
             case .login:
                 return "Welcome Back!"
             }
@@ -41,7 +41,10 @@ class AuthenticationViewController: BaseViewController {
         let textField = StyledTextField(placeholder: "E-mail")
         textField.textContentType = .emailAddress
         textField.keyboardType = .emailAddress
-        textField.clearButtonMode = .unlessEditing
+        textField.clearButtonMode = .whileEditing
+        textField.autocapitalizationType = .none
+        textField.spellCheckingType = .no
+        textField.returnKeyType = .next
         textField.addTarget(self,
                             action: #selector(textFieldDidChange),
                             for: .editingChanged)
@@ -52,8 +55,9 @@ class AuthenticationViewController: BaseViewController {
 
         let textField = StyledTextField(placeholder: "Password")
         textField.textContentType = .password
-        textField.clearButtonMode = .unlessEditing
+        textField.clearButtonMode = .whileEditing
         textField.isSecureTextEntry = true
+        textField.returnKeyType = .done
         textField.addTarget(self,
                             action: #selector(textFieldDidChange),
                             for: .editingChanged)
@@ -82,13 +86,17 @@ class AuthenticationViewController: BaseViewController {
         self.title = self.mode.title
 
         // bar button
-        let cancelButton = UIBarButtonItem(title: "cancel",
+        let cancelButton = UIBarButtonItem(title: "Cancel",
                                            style: .plain,
                                            target: self,
                                            action: #selector(cancelButtonTouchUpInside))
         self.navigationItem.leftBarButtonItem = cancelButton
 
-        // stack View
+        // text fields
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+
+        // stack View, including its contents
         self.setupStackView()
 
         // action button
@@ -112,24 +120,18 @@ class AuthenticationViewController: BaseViewController {
 
         stackView.addArrangedSubview(self.emailTextField)
         stackView.addArrangedSubview(self.passwordTextField)
-
-        if self.mode == .signup {
-            let passwordRuleLabel = UILabel()
-            passwordRuleLabel.translatesAutoresizingMaskIntoConstraints = false
-            passwordRuleLabel.text = "Password needs to have at least \(AuthenticationManager.passwordMinimumLength) characters"
-            stackView.addArrangedSubview(passwordRuleLabel)
-        }
         stackView.addArrangedSubview(self.actionButton)
 
         self.view.addSubview(stackView)
 
         // Here, for simplicity, it assumes that stack view won't be taller than
-        // the viewController.view. So it just centerYAnchor aligned.
+        // the viewController.view. So it just top aligned to topAnchor.
         stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,
                                            constant: Spacing.large).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,
                                             constant: -Spacing.large).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor,
+                                       constant: Spacing.large).isActive = true
     }
 
     // MARK: - Selector Methods
@@ -139,7 +141,51 @@ class AuthenticationViewController: BaseViewController {
 
     @objc private func actionButtonTouchUpInside() {
 
-        
+        guard
+            let email = self.emailTextField.text,
+            let password = self.passwordTextField.text
+            else {
+                return
+        }
+
+        self.view.endEditing(true)
+        self.actionButton.isEnabled = false
+
+        // Firebase is giving meaningful localizedDescription in their errors.
+        // So here, no extra error handling is done.
+        // The localizedDescription is directly shown in an AlertController.
+        let handleError: (Error) -> Void = { [weak self] (error) in
+            self?.actionButton.isEnabled = true
+            self?.presentAlert(forError: error,
+                               withTitle: "Auth failed",
+                               action: nil)
+        }
+
+        switch self.mode {
+        case .signup:
+            AuthenticationManager.shared.createAccount(
+                withEmail: email,
+                password: password
+            ) { (error) in
+                // If auth succeed, AuthenticationManager will notify AuthOptionsViewController
+                // via AuthStateUpdatingDelegate to dismiss AuthenticationViewController/
+                if let error = error {
+                    handleError(error)
+                }
+            }
+        case .login:
+            AuthenticationManager.shared.login(
+                withEmail: email,
+                password: password
+            ) { (error) in
+                // If auth succeed, AuthenticationManager will notify AuthOptionsViewController
+                // via AuthStateUpdatingDelegate to dismiss AuthenticationViewController.
+                if let error = error {
+                    handleError(error)
+                }
+            }
+
+        }
     }
 
     @objc private func textFieldDidChange(sender: StyledTextField) {
@@ -151,7 +197,29 @@ class AuthenticationViewController: BaseViewController {
                 return
         }
 
-        let shouldButtonEnabled = email.isValidEmailAddress && password.isValidAsPassword
+        let shouldButtonEnabled = email.isValidEmailAddress && password.count > 0
         self.actionButton.isEnabled = shouldButtonEnabled
+    }
+}
+
+extension AuthenticationViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        guard let textField = textField as? StyledTextField else {
+            return true
+        }
+
+        switch textField {
+        case self.emailTextField:
+            self.passwordTextField.becomeFirstResponder()
+
+        case self.passwordTextField:
+            textField.resignFirstResponder()
+
+        default:
+            break
+        }
+        return false
     }
 }

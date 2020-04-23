@@ -16,12 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
+        // Firebase has to be initialized before showing AuthOptionsViewController
+        FirebaseApp.configure()
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.rootViewController = AuthOptionsViewController()
         self.window!.makeKeyAndVisible()
-
-        FirebaseApp.configure()
 
         return true
     }

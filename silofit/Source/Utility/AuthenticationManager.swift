@@ -7,43 +7,65 @@
 //
 
 import Foundation
+import FirebaseAuth
+
+protocol AuthStateUpdatingDelegate: class {
+
+    func authStateDidChange()
+}
 
 final class AuthenticationManager {
 
-    static let passwordMinimumLength: Int = 8
-
+    weak var stateUpdatingDelegate: AuthStateUpdatingDelegate?
     static let shared = AuthenticationManager()
 
-    // TODO: mock for now
-    var isLogin: Bool {
-        
-        return false
+    var authStateChangeHandler: AuthStateDidChangeListenerHandle?
+    init() {
+        self.authStateChangeHandler = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            self?.stateUpdatingDelegate?.authStateDidChange()
+        }
     }
 
-    func logout(_ completion: (Error?) -> Void) {
+    deinit {
+        if let authStateChangeHandler = authStateChangeHandler {
+            Auth.auth().removeStateDidChangeListener(authStateChangeHandler)
+        }
+    }
 
-        // mock
-        completion(nil)
+    var isLogin: Bool {
+        
+        return Auth.auth().currentUser != nil
+    }
+
+    func logout() -> Result<Void, Error> {
+
+        do {
+            try Auth.auth().signOut()
+            return .success(())
+        } catch {
+            return .failure(error)
+        }
     }
 
     func createAccount(withEmail email: String,
                        password: String,
-                       completion: ((Error) -> Void)) {
-
+                       completion: @escaping ((Error?) -> Void)) {
+        Auth.auth().createUser(withEmail: email,
+                               password: password) { (_, error) in
+            completion(error)
+        }
     }
 
     func login(withEmail email: String,
                password: String,
-               completion: ((Error) -> Void)) {
-
+               completion: @escaping ((Error?) -> Void)) {
+        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
+            completion(error)
+        }
     }
 }
 
 extension String {
-
-    var isValidAsPassword: Bool {
-        return self.count >= AuthenticationManager.passwordMinimumLength
-    }
 
     var isValidEmailAddress: Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
