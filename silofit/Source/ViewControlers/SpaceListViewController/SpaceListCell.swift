@@ -10,6 +10,14 @@ import UIKit
 
 class SpaceListCell: UICollectionViewCell {
 
+    private var widthConstraint: NSLayoutConstraint?
+
+    var width: CGFloat = 0 {
+        willSet {
+            self.widthConstraint?.constant = newValue
+        }
+    }
+
     let nameLabel: UILabel = {
 
         let label = UILabel()
@@ -42,6 +50,7 @@ class SpaceListCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -60,7 +69,9 @@ class SpaceListCell: UICollectionViewCell {
 
         self.backgroundColor = StyleColor.background
 
-        self.imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.75).isActive = true
+        self.imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 9/16).isActive = true
+        self.widthConstraint = self.imageView.widthAnchor.constraint(equalToConstant: 320)
+        self.widthConstraint?.isActive = true
         self.contentView.addSubview(self.imageView)
 
         self.stackView.addArrangedSubview(self.infoLabel)
@@ -77,22 +88,23 @@ class SpaceListCell: UICollectionViewCell {
             "inset": Spacing.large
         ]
 
+        //"V:|-0@999-[imageView]-(inset@999)-[stackView]-(inset@999)-|"
         let verticalConstraints = NSLayoutConstraint.constraints(
-            withVisualFormat: "V:|[imageView][stackView]-(inset)-|",
+            withVisualFormat: "V:|-0@999-[imageView]-(inset@999)-[stackView]-(inset@999)-|",
             options: [],
             metrics: metrics,
             views: views)
         self.contentView.addConstraints(verticalConstraints)
 
         let imageViewHorizentalConstraint = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|[imageView]|",
+            withVisualFormat: "H:|-0@999-[imageView]-0@999-|",
             options: [],
             metrics: metrics,
             views: views)
         self.contentView.addConstraints(imageViewHorizentalConstraint)
 
         let stackViewHorizentalConstraint = NSLayoutConstraint.constraints(
-            withVisualFormat: "H:|-(inset)-[stackView]-(inset)-|",
+            withVisualFormat: "H:|-(inset@999)-[stackView]-(inset@999)-|",
             options: [],
             metrics: metrics,
             views: views)

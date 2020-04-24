@@ -77,8 +77,8 @@ extension SpaceListViewController: UICollectionViewDataSource {
         cell.nameLabel.text = self.viewModel.nameLabel(at: indexPath)
         cell.infoLabel.text = self.viewModel.basicInfoLabel(at: indexPath)
         cell.distanceLabel.text = self.viewModel.distanceLabel(at: indexPath)
-        cell.contentView.widthAnchor.constraint(equalToConstant: collectionView.frame.width).isActive = true
-        //TODO: load image using SDWebImage
+        cell.imageView.loadImage(from: self.viewModel.imageURL(at: indexPath))
+        cell.width = collectionView.frame.width
 
         return cell
     }
