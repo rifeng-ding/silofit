@@ -88,7 +88,6 @@ class SpaceListCell: UICollectionViewCell {
             "inset": Spacing.large
         ]
 
-        //"V:|-0@999-[imageView]-(inset@999)-[stackView]-(inset@999)-|"
         let verticalConstraints = NSLayoutConstraint.constraints(
             withVisualFormat: "V:|-0@999-[imageView]-(inset@999)-[stackView]-(inset@999)-|",
             options: [],
