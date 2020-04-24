@@ -16,33 +16,28 @@ class SpaceListViewControllerViewModel: ViewModel {
         return spaces.count > 0
     }
 
-    let spaces: [Space]
-    let distances: [CLLocationDistance]?
-    let distanceFormatter = MKDistanceFormatter()
+    let currentCoordinate: CLLocationCoordinate2D?
+    private(set) var spaces: [Space]
+    private let distanceFormatter = MKDistanceFormatter()
 
     init(spaces:[Space], currentCoordinate: CLLocationCoordinate2D?) {
 
         self.spaces = spaces
+        self.currentCoordinate = currentCoordinate
 
-        if let currentCoordinate = currentCoordinate {
-            self.distances = spaces.compactMap { (space) -> CLLocationDistance? in
-                guard let spaceCoordinate = space.coordinate else {
-                    return nil
+        if let coordinate = currentCoordinate {
+            self.spaces.sort { (left, right) -> Bool in
+                // space that doesn't have coordinate cannot calucate distance,
+                // and it will be put at the end of the list
+                guard let leftDistance = left.distance(from: coordinate) else {
+                    return false
                 }
-                let spaceLocation = CLLocation(latitude: spaceCoordinate.latitude,
-                                               longitude: spaceCoordinate.longitude)
-                let currentLocation = CLLocation(latitude: currentCoordinate.latitude,
-                                                 longitude: currentCoordinate.longitude)
-                return spaceLocation.distance(from: currentLocation)
+                guard let rightDistance = right.distance(from: coordinate) else {
+                    return true
+                }
+                return leftDistance < rightDistance
             }
-        } else {
-            self.distances = nil
         }
-    }
-
-    func space(at indexPath: IndexPath) -> Space {
-
-        return self.spaces[indexPath.item]
     }
 
     // MARK: methods for cells
@@ -58,11 +53,14 @@ class SpaceListViewControllerViewModel: ViewModel {
 
     func distanceLabel(at indexPath: IndexPath) -> String? {
 
-        guard let distances = self.distances else {
+        let space = self.spaces[indexPath.item]
+        guard
+            let coordinate = self.currentCoordinate,
+            let distance = space.distance(from: coordinate)
+            else {
             return nil
         }
 
-        let distance = distances[indexPath.item]
         let formattedDistance = self.distanceFormatter.string(fromDistance: distance)
         return "\(formattedDistance) away"
     }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MapKit
+import CoreLocation
 
 struct Space: Codable, Identifiable {
 
@@ -71,5 +71,17 @@ struct Space: Codable, Identifiable {
         case squareFootage = "square_footage"
         case status
         case timezone
+    }
+
+    func distance(from coordinate: CLLocationCoordinate2D) -> CLLocationDistance? {
+        
+        guard let spaceCoordinate = self.coordinate else {
+            return nil
+        }
+        let spaceLocation = CLLocation(latitude: spaceCoordinate.latitude,
+                                       longitude: spaceCoordinate.longitude)
+        let coordinateLocation = CLLocation(latitude: coordinate.latitude,
+                                            longitude: coordinate.longitude)
+        return spaceLocation.distance(from: coordinateLocation)
     }
 }
