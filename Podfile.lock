@@ -1,5 +1,4 @@
 PODS:
-  - CodableFirebase (0.2.1)
   - Firebase/Auth (6.23.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.5.2)
@@ -60,13 +59,11 @@ PODS:
   - PromisesObjC (1.2.8)
 
 DEPENDENCIES:
-  - CodableFirebase (~> 0.2)
   - Firebase/Auth (~> 6.5)
   - Firebase/Database (~> 6.2)
 
 SPEC REPOS:
   trunk:
-    - CodableFirebase
     - Firebase
     - FirebaseAuth
     - FirebaseAuthInterop
@@ -83,7 +80,6 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
-  CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   Firebase: 585ae467b3edda6a5444e788fda6888f024d8d6f
   FirebaseAuth: e50319ecc114acf93c2b9581e15d6604ddd7eeb2
   FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
@@ -99,6 +95,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 8d4c6ab2d35d3047d53fbe0c9459e70309e26ad9
+PODFILE CHECKSUM: a63d7b4a7db2f61597f1359a0f5ee4bdcd7f0dfe
 
 COCOAPODS: 1.9.1

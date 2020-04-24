@@ -123,6 +123,11 @@ class MapViewController: BaseViewController {
 
     @objc private func listViewButtonTouchUpInside() {
         
-        print("Switch to list view")
+        let listViewController = SpaceListViewController(spaces: self.viewModel.spaces,
+                                                         currentCoordinate: self.mapView.userLocation.coordinate)
+        let navigationController = StyledNavigationController(rootViewController: listViewController)
+        navigationController.modalTransitionStyle = .coverVertical
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true, completion: nil)
     }
 }

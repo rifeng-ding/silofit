@@ -81,7 +81,7 @@ class AuthenticationViewController: BaseViewController {
 
     override func setupUI() {
 
-        self.view.backgroundColor = StyleColor.light
+        self.view.backgroundColor = StyleColor.background
 
         self.title = self.mode.title
 

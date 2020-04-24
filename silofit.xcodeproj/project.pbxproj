@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,16 @@
 		970EB20A2452131400AB4940 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970EB2092452131400AB4940 /* AuthenticationViewController.swift */; };
 		970EB20C245213A900AB4940 /* StyledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970EB20B245213A900AB4940 /* StyledTextField.swift */; };
 		97DCED5924524CE300706A91 /* SpacePointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5824524CE300706A91 /* SpacePointAnnotation.swift */; };
+		97DCED5B245313FF00706A91 /* SpaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5A245313FF00706A91 /* SpaceListViewController.swift */; };
+		97DCED5E245315F300706A91 /* SpaceListViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5D245315F300706A91 /* SpaceListViewControllerViewModel.swift */; };
+		97DCED602453214600706A91 /* SpaceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5F2453214600706A91 /* SpaceListCell.swift */; };
+		97DCED622453222400706A91 /* StyleFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED612453222400706A91 /* StyleFont.swift */; };
+		97DCED662453247000706A91 /* TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED652453247000706A91 /* TextColor.swift */; };
+		97DCED69245324DD00706A91 /* UIColor+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED68245324DD00706A91 /* UIColor+Style.swift */; };
+		97DCED6B24532B9300706A91 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED6A24532B9300706A91 /* ReusableView.swift */; };
+		97DCED6E24534E2A00706A91 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 97DCED6D24534E2A00706A91 /* SDWebImage */; };
+		97DCED7024534E5200706A91 /* UIImageView+ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED6F24534E5200706A91 /* UIImageView+ImageLoading.swift */; };
+		97DCED73245393B800706A91 /* CodableFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 97DCED72245393B800706A91 /* CodableFirebase */; };
 		97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0324508D4600A3EC25 /* AppDelegate.swift */; };
 		97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */; };
 		97E2AB0D24508D4E00A3EC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */; };
@@ -54,6 +64,14 @@
 		970EB2092452131400AB4940 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		970EB20B245213A900AB4940 /* StyledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledTextField.swift; sourceTree = "<group>"; };
 		97DCED5824524CE300706A91 /* SpacePointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePointAnnotation.swift; sourceTree = "<group>"; };
+		97DCED5A245313FF00706A91 /* SpaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListViewController.swift; sourceTree = "<group>"; };
+		97DCED5D245315F300706A91 /* SpaceListViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListViewControllerViewModel.swift; sourceTree = "<group>"; };
+		97DCED5F2453214600706A91 /* SpaceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListCell.swift; sourceTree = "<group>"; };
+		97DCED612453222400706A91 /* StyleFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleFont.swift; sourceTree = "<group>"; };
+		97DCED652453247000706A91 /* TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColor.swift; sourceTree = "<group>"; };
+		97DCED68245324DD00706A91 /* UIColor+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Style.swift"; sourceTree = "<group>"; };
+		97DCED6A24532B9300706A91 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		97DCED6F24534E5200706A91 /* UIImageView+ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoading.swift"; sourceTree = "<group>"; };
 		97E2AB0024508D4600A3EC25 /* silofit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = silofit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E2AB0324508D4600A3EC25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionsViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97DCED73245393B800706A91 /* CodableFirebase in Frameworks */,
+				97DCED6E24534E2A00706A91 /* SDWebImage in Frameworks */,
 				C520B7D72292AC9C3A010C12 /* Pods_silofit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +153,26 @@
 				970EB2092452131400AB4940 /* AuthenticationViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		97DCED5C2453140C00706A91 /* SpaceListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				97DCED5A245313FF00706A91 /* SpaceListViewController.swift */,
+				97DCED5D245315F300706A91 /* SpaceListViewControllerViewModel.swift */,
+				97DCED5F2453214600706A91 /* SpaceListCell.swift */,
+			);
+			path = SpaceListViewController;
+			sourceTree = "<group>";
+		};
+		97DCED67245324C400706A91 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				97DCED68245324DD00706A91 /* UIColor+Style.swift */,
+				97E2AB3424509BAB00A3EC25 /* StyleColor.swift */,
+				97DCED652453247000706A91 /* TextColor.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 		97E2AAF724508D4600A3EC25 = {
@@ -205,6 +245,7 @@
 				97E2AB3C2450C2E300A3EC25 /* StyledNavigationController.swift */,
 				970EB208245212F000AB4940 /* Authentication */,
 				97E2AB4C2451C32C00A3EC25 /* MapViewController */,
+				97DCED5C2453140C00706A91 /* SpaceListViewController */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -225,6 +266,7 @@
 				97E2AB512451C7B500A3EC25 /* ViewModel.swift */,
 				97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */,
 				97E2AB472451148900A3EC25 /* Identifiable.swift */,
+				97DCED6A24532B9300706A91 /* ReusableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -244,6 +286,7 @@
 				97E2AB372450B86B00A3EC25 /* Style */,
 				97E2AB382450B88900A3EC25 /* AuthenticationManager.swift */,
 				97E2AB4A2451176800A3EC25 /* DataManager.swift */,
+				97DCED6F24534E5200706A91 /* UIImageView+ImageLoading.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -252,7 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				97E2AB2E245094B000A3EC25 /* Style.swift */,
-				97E2AB3424509BAB00A3EC25 /* StyleColor.swift */,
+				97DCED612453222400706A91 /* StyleFont.swift */,
+				97DCED67245324C400706A91 /* Color */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -286,6 +330,10 @@
 			dependencies = (
 			);
 			name = silofit;
+			packageProductDependencies = (
+				97DCED6D24534E2A00706A91 /* SDWebImage */,
+				97DCED72245393B800706A91 /* CodableFirebase */,
+			);
 			productName = silofit;
 			productReference = 97E2AB0024508D4600A3EC25 /* silofit.app */;
 			productType = "com.apple.product-type.application";
@@ -337,6 +385,10 @@
 				Base,
 			);
 			mainGroup = 97E2AAF724508D4600A3EC25;
+			packageReferences = (
+				97DCED6C24534E2A00706A91 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				97DCED71245393B700706A91 /* XCRemoteSwiftPackageReference "CodableFirebase" */,
+			);
 			productRefGroup = 97E2AB0124508D4600A3EC25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -440,23 +492,31 @@
 				97E2AB412450DBDF00A3EC25 /* Space.swift in Sources */,
 				97E2AB3524509BAB00A3EC25 /* StyleColor.swift in Sources */,
 				97E2AB452451142300A3EC25 /* Equipment.swift in Sources */,
+				97DCED7024534E5200706A91 /* UIImageView+ImageLoading.swift in Sources */,
 				97E2AB2F245094B000A3EC25 /* Style.swift in Sources */,
+				97DCED662453247000706A91 /* TextColor.swift in Sources */,
 				97E2AB392450B88900A3EC25 /* AuthenticationManager.swift in Sources */,
 				97E2AB522451C7B500A3EC25 /* ViewModel.swift in Sources */,
 				97E2AB43245113F700A3EC25 /* Amenity.swift in Sources */,
+				97DCED5B245313FF00706A91 /* SpaceListViewController.swift in Sources */,
 				97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */,
 				97E2AB3D2450C2E300A3EC25 /* StyledNavigationController.swift in Sources */,
 				97E2AB4E2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift in Sources */,
 				97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */,
 				97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */,
+				97DCED622453222400706A91 /* StyleFont.swift in Sources */,
 				97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */,
 				97E2AB4B2451176800A3EC25 /* DataManager.swift in Sources */,
 				97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */,
+				97DCED69245324DD00706A91 /* UIColor+Style.swift in Sources */,
+				97DCED6B24532B9300706A91 /* ReusableView.swift in Sources */,
 				970EB20A2452131400AB4940 /* AuthenticationViewController.swift in Sources */,
 				97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */,
 				97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */,
+				97DCED5E245315F300706A91 /* SpaceListViewControllerViewModel.swift in Sources */,
 				970EB20C245213A900AB4940 /* StyledTextField.swift in Sources */,
 				97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */,
+				97DCED602453214600706A91 /* SpaceListCell.swift in Sources */,
 				97DCED5924524CE300706A91 /* SpacePointAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,15 +670,18 @@
 			baseConfigurationReference = C39AD0A96047AA8E30E95C87 /* Pods-silofit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4FVQPRS8SG;
 				INFOPLIST_FILE = silofit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wfh.silofit;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rifeng-ding.silofit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Development Wildcard";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -629,15 +692,18 @@
 			baseConfigurationReference = 8C6548E19E8DFEF7665C3DC4 /* Pods-silofit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4FVQPRS8SG;
 				INFOPLIST_FILE = silofit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wfh.silofit;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rifeng-ding.silofit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Development Wildcard";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -718,6 +784,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		97DCED6C24534E2A00706A91 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.7.3;
+			};
+		};
+		97DCED71245393B700706A91 /* XCRemoteSwiftPackageReference "CodableFirebase" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alickbass/CodableFirebase.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		97DCED6D24534E2A00706A91 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97DCED6C24534E2A00706A91 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		97DCED72245393B800706A91 /* CodableFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97DCED71245393B700706A91 /* XCRemoteSwiftPackageReference "CodableFirebase" */;
+			productName = CodableFirebase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 97E2AAF824508D4600A3EC25 /* Project object */;
 }

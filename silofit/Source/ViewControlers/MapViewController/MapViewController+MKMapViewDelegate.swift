@@ -13,6 +13,7 @@ extension MapViewController: MKMapViewDelegate {
 
     func updateAnntations(from oldAnnotations: [MKAnnotation],
                           to newAnnotations: [MKAnnotation]) {
+        
         self.mapView.removeAnnotations(oldAnnotations)
         for annotation in newAnnotations {
             self.mapView.addAnnotation(annotation)
@@ -33,7 +34,7 @@ extension MapViewController: MKMapViewDelegate {
         }
 
         // Since MKPinAnnotationView is used, the identifer is hard-coded here.
-        let identifier = "annotation"
+        let identifier = MKMarkerAnnotationView.reuseIdentifer
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
 
         if annotationView == nil {

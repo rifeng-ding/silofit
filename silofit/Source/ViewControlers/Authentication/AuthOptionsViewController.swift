@@ -26,7 +26,7 @@ class AuthOptionsViewController: BaseViewController {
 
     override func setupUI() {
 
-        self.view.backgroundColor = StyleColor.light
+        self.view.backgroundColor = StyleColor.background
 
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false

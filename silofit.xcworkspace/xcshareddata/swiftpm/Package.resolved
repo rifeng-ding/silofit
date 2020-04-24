@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CodableFirebase",
+        "repositoryURL": "https://github.com/alickbass/CodableFirebase.git",
+        "state": {
+          "branch": null,
+          "revision": "a4cda89948db93ec21249a35ecdacab8c489a116",
+          "version": "0.2.2"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
+        "state": {
+          "branch": null,
+          "revision": "39370d1af85734dffe0e3f89b389976da461be3f",
+          "version": "5.7.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

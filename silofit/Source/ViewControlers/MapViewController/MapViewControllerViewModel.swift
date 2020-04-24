@@ -16,7 +16,7 @@ class MapViewControllerViewModel: ViewModel {
         return spaces.count > 0
     }
 
-    private var spaces: [Space]
+    private(set) var spaces: [Space]
 
     init(spaces:[Space]) {
         self.spaces = spaces
