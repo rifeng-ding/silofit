@@ -28,7 +28,7 @@ struct Space: Codable, Identifiable {
     let description: String?
     let equipments: [Equipment]?
     let floor: String?
-    let imageUrls: [String]?
+    let imageURLs: [String]?
     let latitude: Double?
     let longitude: Double?
     let maxCapacity: Int?
@@ -59,7 +59,7 @@ struct Space: Codable, Identifiable {
         case equipments
         case floor
         case identifier = "space_id"
-        case imageUrls = "image_urls"
+        case imageURLs = "image_urls"
         case latitude
         case longitude
         case maxCapacity = "max_capacity"

@@ -88,5 +88,8 @@ extension SpaceListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        let imageURLs = self.viewModel.imageURLs(at: indexPath)
+        let galleryViewController = GalleryViewController(imageURLs: imageURLs)
+        self.navigationController?.pushViewController(galleryViewController, animated: true)
     }
 }
