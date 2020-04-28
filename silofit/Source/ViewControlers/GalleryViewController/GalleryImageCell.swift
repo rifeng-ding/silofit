@@ -35,7 +35,7 @@ class GalleryImageCell: UICollectionViewCell {
         
         let scrollView: UIScrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = StyleColor.background
+        scrollView.backgroundColor = StyleColor.scrollViewBackground
         scrollView.alwaysBounceVertical = false
         scrollView.alwaysBounceHorizontal = false
         scrollView.showsVerticalScrollIndicator = true
@@ -72,6 +72,11 @@ class GalleryImageCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func resetImageZoom() {
+        
+        self.scrollView.zoomScale = 1
     }
 }
 

@@ -14,7 +14,6 @@ class StyledNavigationController: UINavigationController {
 
         super.init(rootViewController: rootViewController)
         self.navigationBar.tintColor = StyleColor.theme
-        self.navigationBar.isTranslucent = false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

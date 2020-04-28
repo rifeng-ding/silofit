@@ -33,7 +33,7 @@ class MapViewController: BaseViewController {
 
         self.mapView.delegate = self
         self.view.addSubview(self.mapView)
-        self.mapView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        self.mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         self.mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         self.mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         self.mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
