@@ -40,13 +40,14 @@
 		97E2AB452451142300A3EC25 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB442451142300A3EC25 /* Equipment.swift */; };
 		97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */; };
 		97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB472451148900A3EC25 /* Identifiable.swift */; };
-		97E2AB4B2451176800A3EC25 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4A2451176800A3EC25 /* DataManager.swift */; };
+		97E2AB4B2451176800A3EC25 /* FirebaseSpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4A2451176800A3EC25 /* FirebaseSpaceService.swift */; };
 		97E2AB4E2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */; };
 		97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */; };
 		97E2AB522451C7B500A3EC25 /* ViewModelValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB512451C7B500A3EC25 /* ViewModelValidation.swift */; };
 		B47718D22459BA2800550671 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D12459BA2800550671 /* AuthenticationViewModel.swift */; };
 		B47718D72459BAE800550671 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D62459BAE800550671 /* AuthService.swift */; };
 		B47718D92459BC1900550671 /* String+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D82459BC1900550671 /* String+Auth.swift */; };
+		B48A125A2459C4420036AA88 /* SpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48A12592459C4420036AA88 /* SpaceService.swift */; };
 		B48E84BD245866A70001BFCE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48E84BC245866A70001BFCE /* GalleryViewController.swift */; };
 		B48E84BF245867E30001BFCE /* GalleryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48E84BE245867E30001BFCE /* GalleryImageCell.swift */; };
 		B48E84C124586C3B0001BFCE /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48E84C024586C3B0001BFCE /* GalleryViewModel.swift */; };
@@ -101,13 +102,14 @@
 		97E2AB442451142300A3EC25 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		97E2AB462451148900A3EC25 /* CaseDefaultCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseDefaultCodable.swift; sourceTree = "<group>"; };
 		97E2AB472451148900A3EC25 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
-		97E2AB4A2451176800A3EC25 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		97E2AB4A2451176800A3EC25 /* FirebaseSpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSpaceService.swift; sourceTree = "<group>"; };
 		97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 		97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerViewModel.swift; sourceTree = "<group>"; };
 		97E2AB512451C7B500A3EC25 /* ViewModelValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelValidation.swift; sourceTree = "<group>"; };
 		B47718D12459BA2800550671 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		B47718D62459BAE800550671 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B47718D82459BC1900550671 /* String+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Auth.swift"; sourceTree = "<group>"; };
+		B48A12592459C4420036AA88 /* SpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceService.swift; sourceTree = "<group>"; };
 		B48E84BC245866A70001BFCE /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		B48E84BE245867E30001BFCE /* GalleryImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageCell.swift; sourceTree = "<group>"; };
 		B48E84C024586C3B0001BFCE /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
@@ -298,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				97E2AB372450B86B00A3EC25 /* Style */,
-				97E2AB4A2451176800A3EC25 /* DataManager.swift */,
 				97DCED6F24534E5200706A91 /* UIImageView+ImageLoading.swift */,
 			);
 			path = Utility;
@@ -338,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				B47718D52459BAD400550671 /* Authenticaton */,
+				B48A125B2459C45E0036AA88 /* Space */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -350,6 +352,15 @@
 				B47718D82459BC1900550671 /* String+Auth.swift */,
 			);
 			path = Authenticaton;
+			sourceTree = "<group>";
+		};
+		B48A125B2459C45E0036AA88 /* Space */ = {
+			isa = PBXGroup;
+			children = (
+				B48A12592459C4420036AA88 /* SpaceService.swift */,
+				97E2AB4A2451176800A3EC25 /* FirebaseSpaceService.swift */,
+			);
+			path = Space;
 			sourceTree = "<group>";
 		};
 		B48E84BB2458667E0001BFCE /* GalleryViewController */ = {
@@ -559,7 +570,7 @@
 				97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */,
 				97DCED622453222400706A91 /* StyleFont.swift in Sources */,
 				97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */,
-				97E2AB4B2451176800A3EC25 /* DataManager.swift in Sources */,
+				97E2AB4B2451176800A3EC25 /* FirebaseSpaceService.swift in Sources */,
 				97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */,
 				97DCED69245324DD00706A91 /* UIColor+Style.swift in Sources */,
 				97DCED6B24532B9300706A91 /* ReusableView.swift in Sources */,
@@ -573,6 +584,7 @@
 				97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */,
 				B48E84BD245866A70001BFCE /* GalleryViewController.swift in Sources */,
 				97DCED602453214600706A91 /* SpaceListCell.swift in Sources */,
+				B48A125A2459C4420036AA88 /* SpaceService.swift in Sources */,
 				97DCED5924524CE300706A91 /* SpacePointAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

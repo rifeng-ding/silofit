@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AuthenticationViewModel {
+class AuthenticationViewModel {
     
     enum Mode {
         case signup
@@ -17,6 +17,12 @@ struct AuthenticationViewModel {
 
     let mode: Mode
     let authService: AuthService
+    
+    init(mode: Mode, authService: AuthService) {
+        
+        self.mode = mode
+        self.authService = authService
+    }
     
     var title: String {
         switch self.mode {

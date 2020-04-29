@@ -11,13 +11,7 @@ import MapKit
 
 class MapViewController: BaseViewController {
 
-    var viewModel = MapViewControllerViewModel(spaces: []) {
-        
-        didSet {
-            self.updateAnntations(from: oldValue.mapAnnotations,
-                                  to: self.viewModel.mapAnnotations)
-        }
-    }
+    var viewModel: MapViewControllerViewModel
 
     let locationManager = CLLocationManager()
     let defaultCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -29,6 +23,17 @@ class MapViewController: BaseViewController {
         return mapView
     }()
 
+    init(authService: AuthService, spaceService: SpaceService) {
+        
+        self.viewModel = MapViewControllerViewModel(authService: authService,
+                                                    spaceService: spaceService)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func setupUI() {
 
         self.mapView.delegate = self
@@ -64,43 +69,58 @@ class MapViewController: BaseViewController {
         super.viewDidAppear(animated)
 
         if !self.viewModel.isValid {
-            self.loadSpaces { (spaces) in
-                self.viewModel = MapViewControllerViewModel(spaces: spaces)
-            }
+            self.loadSpaces()
         }
         self.mapView.showsUserLocation = true
     }
-
-    // MARK: - Data Fetching
-    func loadSpaces(completion: @escaping ([Space]) -> Void ) {
-
-        DataManager.fetchAllSpaces { [weak self] (result) in
+    
+    private func loadSpaces() {
+        
+        self.viewModel.loadSpaces { [weak self] (result) in
+            
+            guard let weakSelf = self else {
+                return
+            }
+            
             switch result {
-            case .success(let spaces):
-                completion(spaces ?? [])
+            case .success:
+                let oldAnnotations = weakSelf.viewModel.currentMapAnnotations
+                let newAnnotations = weakSelf.viewModel.generateMapAnnotations()
+                weakSelf.updateAnntations(from: oldAnnotations, to: newAnnotations)
+                break
             case .failure(let error):
                 let retryAction = UIAlertAction(title: "Retry", style: .default) { (_) in
-                    self?.loadSpaces(completion: completion)
+                    weakSelf.loadSpaces()
                 }
-                self?.presentAlert(forError: error,
-                                  withTitle: "Cannot load spaces...",
-                                  action: retryAction)
-                completion([])
+                weakSelf.presentAlert(forError: error,
+                                   withTitle: "Cannot load spaces...",
+                                   action: retryAction)
             }
         }
-
     }
-
+    
     private func logout() {
-        switch FirebaseAuthService.shared.logout() {
-        case .success(_):
-            self.dismiss(animated: true, completion: nil)
-        case .failure(let error):
-            // TODO: not sure whether this is the correct error handling
-            let action = UIAlertAction(title: "OK", style: .default) { [weak self] (_) in
+        
+        self.viewModel.logout { [weak self] (result) in
+            switch result {
+            case .success:
                 self?.dismiss(animated: true, completion: nil)
+            case .failure(let error):
+                // TODO: not sure whether this is the correct error handling
+                let action = UIAlertAction(title: "OK", style: .default) { [weak self] (_) in
+                    self?.dismiss(animated: true, completion: nil)
+                }
+                self?.presentAlert(forError: error, withTitle: "Please re-login", action: action)
             }
-            self.presentAlert(forError: error, withTitle: "Please re-login", action: action)
+        }
+    }
+    
+    func updateAnntations(from oldAnnotations: [MKAnnotation],
+                          to newAnnotations: [MKAnnotation]) {
+        
+        self.mapView.removeAnnotations(oldAnnotations)
+        for annotation in newAnnotations {
+            self.mapView.addAnnotation(annotation)
         }
     }
 

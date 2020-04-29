@@ -84,7 +84,8 @@ class AuthOptionsViewController: BaseViewController {
         self.loginButton.isEnabled = false
         self.signupButton.isEnabled = false
 
-        let navigationViewController = StyledNavigationController(rootViewController: MapViewController())
+        let mapViewController = MapViewController(authService: self.authService, spaceService: FirebaseSpaceService())
+        let navigationViewController = StyledNavigationController(rootViewController: mapViewController)
         navigationViewController.modalTransitionStyle = .flipHorizontal
         navigationViewController.modalPresentationStyle = .fullScreen
         self.present(navigationViewController,

@@ -11,15 +11,6 @@ import MapKit
 
 extension MapViewController: MKMapViewDelegate {
 
-    func updateAnntations(from oldAnnotations: [MKAnnotation],
-                          to newAnnotations: [MKAnnotation]) {
-        
-        self.mapView.removeAnnotations(oldAnnotations)
-        for annotation in newAnnotations {
-            self.mapView.addAnnotation(annotation)
-        }
-    }
-
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
 
         let region = MKCoordinateRegion(center: userLocation.coordinate,
@@ -33,7 +24,6 @@ extension MapViewController: MKMapViewDelegate {
             return nil
         }
 
-        // Since MKPinAnnotationView is used, the identifer is hard-coded here.
         let identifier = MKMarkerAnnotationView.reuseIdentifer
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
 
@@ -48,9 +38,5 @@ extension MapViewController: MKMapViewDelegate {
         (annotationView as? MKMarkerAnnotationView)?.markerTintColor = tintColor
 
         return annotationView
-    }
-
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
     }
 }
