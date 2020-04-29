@@ -9,7 +9,7 @@
 import CoreLocation
 import MapKit
 
-class SpaceListViewControllerViewModel: ViewModel {
+class SpaceListViewControllerViewModel: ViewModelValidation {
 
     var isValid: Bool {
 

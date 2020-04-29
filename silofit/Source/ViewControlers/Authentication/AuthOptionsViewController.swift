@@ -10,6 +10,10 @@ import UIKit
 
 class AuthOptionsViewController: BaseViewController {
 
+    // Didn't create a view model for this controller,
+    // because this is the only dependency.
+    var authService: AuthService
+    
     private let loginButton: StyledButton = {
         
         let button = StyledButton(style: .dark, title: "Sign In")
@@ -51,10 +55,15 @@ class AuthOptionsViewController: BaseViewController {
                                        constant: verticalSpacing).isActive = true
     }
 
-    override func viewDidLoad() {
-
-        super.viewDidLoad()
-        AuthenticationManager.shared.stateUpdatingDelegate = self
+    init(authService: AuthService? = nil) {
+        
+        self.authService = authService ?? FirebaseAuthService.shared
+        super.init(nibName: nil, bundle: nil)
+        self.authService.stateUpdatingDelegate = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -65,7 +74,7 @@ class AuthOptionsViewController: BaseViewController {
 
     private func presentMapViewControllerIfNeeded() {
 
-        guard AuthenticationManager.shared.isLogin else {
+        guard self.authService.isLogin else {
             self.loginButton.isEnabled = true
             self.signupButton.isEnabled = true
             return
@@ -75,7 +84,8 @@ class AuthOptionsViewController: BaseViewController {
         self.loginButton.isEnabled = false
         self.signupButton.isEnabled = false
 
-        let navigationViewController = StyledNavigationController(rootViewController: MapViewController())
+        let mapViewController = MapViewController(authService: self.authService, spaceService: FirebaseSpaceService())
+        let navigationViewController = StyledNavigationController(rootViewController: mapViewController)
         navigationViewController.modalTransitionStyle = .flipHorizontal
         navigationViewController.modalPresentationStyle = .fullScreen
         self.present(navigationViewController,
@@ -86,7 +96,7 @@ class AuthOptionsViewController: BaseViewController {
     // MARK: - Button Actions
     @objc private func buttonTouchUp(sender: StyledButton) {
 
-        var mode: AuthenticationViewController.Mode?
+        var mode: AuthenticationViewModel.Mode?
         switch sender {
         case self.loginButton:
             mode = .login
@@ -98,7 +108,8 @@ class AuthOptionsViewController: BaseViewController {
         guard let authMode = mode else {
             return
         }
-        let authViewController = AuthenticationViewController(mode: authMode)
+        let authViewController = AuthenticationViewController(mode: authMode,
+                                                              authService: self.authService)
         self.present(StyledNavigationController(rootViewController: authViewController),
                      animated: true,
                      completion: nil)

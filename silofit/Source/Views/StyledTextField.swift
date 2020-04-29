@@ -13,16 +13,27 @@ class StyledTextField: UITextField {
     static let defaultHeight: CGFloat = 60
 
     init(placeholder: String? = nil, text: String? = nil) {
+        
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = StyleColor.textFieldBackground
-        self.layer.borderColor = StyleColor.border.cgColor
         self.layer.cornerRadius = CornerRadius.regular
 
         self.heightAnchor.constraint(equalToConstant: Self.defaultHeight).isActive = true
 
         self.placeholder = placeholder
         self.text = text
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.setupColors()
+    }
+    
+    private func setupColors() {
+        
+        self.backgroundColor = StyleColor.textFieldBackground
+        self.layer.borderColor = StyleColor.border.cgColor
     }
 
     // placeholder position
