@@ -14,9 +14,16 @@ class StyledNavigationController: UINavigationController {
 
         super.init(rootViewController: rootViewController)
         self.navigationBar.tintColor = StyleColor.theme
-        self.navigationBar.isTranslucent = false
     }
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return self.topViewController?.supportedInterfaceOrientations ?? .all
+    }
+    
+    override var shouldAutorotate: Bool {
+        self.topViewController?.shouldAutorotate ?? false
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

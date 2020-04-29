@@ -24,3 +24,9 @@ enum BorderWidth {
 
     static let regular: CGFloat = 1
 }
+
+enum ImageZoomScale {
+    
+    static let minimum: CGFloat = 1
+    static let maximum: CGFloat = 10
+}

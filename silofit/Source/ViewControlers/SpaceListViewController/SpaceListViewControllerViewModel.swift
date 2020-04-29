@@ -93,9 +93,18 @@ class SpaceListViewControllerViewModel: ViewModel {
 
     func imageURL(at indexPath: IndexPath) -> URL? {
 
-        guard let imageURL = self.spaces[indexPath.item].imageUrls?.first else {
+        guard let imageURL = self.spaces[indexPath.item].imageURLs?.first else {
             return nil
         }
         return URL(string: imageURL)
+    }
+    
+    func imageURLs(at indexPath: IndexPath) -> [URL] {
+        
+        guard let rawimageURLs = self.spaces[indexPath.item].imageURLs else {
+            return []
+        }
+        
+        return rawimageURLs.compactMap { URL(string: $0) }
     }
 }

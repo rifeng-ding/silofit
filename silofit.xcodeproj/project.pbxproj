@@ -44,6 +44,9 @@
 		97E2AB4E2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */; };
 		97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */; };
 		97E2AB522451C7B500A3EC25 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB512451C7B500A3EC25 /* ViewModel.swift */; };
+		B48E84BD245866A70001BFCE /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48E84BC245866A70001BFCE /* GalleryViewController.swift */; };
+		B48E84BF245867E30001BFCE /* GalleryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48E84BE245867E30001BFCE /* GalleryImageCell.swift */; };
+		B48E84C124586C3B0001BFCE /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48E84C024586C3B0001BFCE /* GalleryViewModel.swift */; };
 		C520B7D72292AC9C3A010C12 /* Pods_silofit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6920EE4F7F70776CD1360AC1 /* Pods_silofit.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,9 @@
 		97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 		97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerViewModel.swift; sourceTree = "<group>"; };
 		97E2AB512451C7B500A3EC25 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B48E84BC245866A70001BFCE /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		B48E84BE245867E30001BFCE /* GalleryImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageCell.swift; sourceTree = "<group>"; };
+		B48E84C024586C3B0001BFCE /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		C39AD0A96047AA8E30E95C87 /* Pods-silofit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofit.debug.xcconfig"; path = "Target Support Files/Pods-silofit/Pods-silofit.debug.xcconfig"; sourceTree = "<group>"; };
 		F037964DA48AEFDA3B2BAF7C /* Pods_silofitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_silofitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AEC4936E74B3C368300BA4 /* Pods-silofitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-silofitTests.release.xcconfig"; path = "Target Support Files/Pods-silofitTests/Pods-silofitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 				970EB208245212F000AB4940 /* Authentication */,
 				97E2AB4C2451C32C00A3EC25 /* MapViewController */,
 				97DCED5C2453140C00706A91 /* SpaceListViewController */,
+				B48E84BB2458667E0001BFCE /* GalleryViewController */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -310,6 +317,16 @@
 				97DCED5824524CE300706A91 /* SpacePointAnnotation.swift */,
 			);
 			path = MapViewController;
+			sourceTree = "<group>";
+		};
+		B48E84BB2458667E0001BFCE /* GalleryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B48E84BC245866A70001BFCE /* GalleryViewController.swift */,
+				B48E84C024586C3B0001BFCE /* GalleryViewModel.swift */,
+				B48E84BE245867E30001BFCE /* GalleryImageCell.swift */,
+			);
+			path = GalleryViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -502,6 +519,7 @@
 				97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */,
 				97E2AB3D2450C2E300A3EC25 /* StyledNavigationController.swift in Sources */,
 				97E2AB4E2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift in Sources */,
+				B48E84C124586C3B0001BFCE /* GalleryViewModel.swift in Sources */,
 				97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */,
 				97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */,
 				97DCED622453222400706A91 /* StyleFont.swift in Sources */,
@@ -512,10 +530,12 @@
 				97DCED6B24532B9300706A91 /* ReusableView.swift in Sources */,
 				970EB20A2452131400AB4940 /* AuthenticationViewController.swift in Sources */,
 				97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */,
+				B48E84BF245867E30001BFCE /* GalleryImageCell.swift in Sources */,
 				97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */,
 				97DCED5E245315F300706A91 /* SpaceListViewControllerViewModel.swift in Sources */,
 				970EB20C245213A900AB4940 /* StyledTextField.swift in Sources */,
 				97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */,
+				B48E84BD245866A70001BFCE /* GalleryViewController.swift in Sources */,
 				97DCED602453214600706A91 /* SpaceListCell.swift in Sources */,
 				97DCED5924524CE300706A91 /* SpacePointAnnotation.swift in Sources */,
 			);
