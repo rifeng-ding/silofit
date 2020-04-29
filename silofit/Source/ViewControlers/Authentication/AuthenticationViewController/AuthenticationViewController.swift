@@ -11,31 +11,8 @@ import Firebase
 
 class AuthenticationViewController: BaseViewController {
 
-    enum Mode {
-        case signup
-        case login
-
-        var actionButtonTitle: String {
-            switch self {
-            case .signup:
-                return "Create Account"
-            case .login:
-                return "Login"
-            }
-        }
-
-        var title: String {
-            switch self {
-            case .signup:
-                return "Welcome Aboard!"
-            case .login:
-                return "Welcome Back!"
-            }
-        }
-    }
-
-    let mode: Mode
-
+    let viewModel: AuthenticationViewModel
+    
     let emailTextField: StyledTextField = {
 
         let textField = StyledTextField(placeholder: "E-mail")
@@ -66,11 +43,12 @@ class AuthenticationViewController: BaseViewController {
 
     let actionButton: StyledButton
 
-    init(mode: Mode) {
+    init(mode: AuthenticationViewModel.Mode, authService: AuthService) {
 
-        self.mode = mode
+        self.viewModel = AuthenticationViewModel(mode: mode, authService: authService)
+        
         self.actionButton = StyledButton(style: .dark,
-                                         title: mode.actionButtonTitle)
+                                         title: self.viewModel.actionButtonTitle)
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -83,7 +61,7 @@ class AuthenticationViewController: BaseViewController {
 
         self.view.backgroundColor = StyleColor.background
 
-        self.title = self.mode.title
+        self.title = self.viewModel.title
 
         // bar button
         let cancelButton = UIBarButtonItem(title: "Cancel",
@@ -106,7 +84,7 @@ class AuthenticationViewController: BaseViewController {
                                     for: .touchUpInside)
 
         // text field
-        if #available(iOS 12.0, *), mode == .signup {
+        if #available(iOS 12.0, *), self.viewModel.mode == .signup {
             self.passwordTextField.textContentType = .newPassword
         }
     }
@@ -162,9 +140,9 @@ class AuthenticationViewController: BaseViewController {
                                action: nil)
         }
 
-        switch self.mode {
+        switch self.viewModel.mode {
         case .signup:
-            AuthenticationManager.shared.createAccount(
+            self.viewModel.createAccount(
                 withEmail: email,
                 password: password
             ) { (error) in
@@ -175,7 +153,7 @@ class AuthenticationViewController: BaseViewController {
                 }
             }
         case .login:
-            AuthenticationManager.shared.login(
+            self.viewModel.login(
                 withEmail: email,
                 password: password
             ) { (error) in

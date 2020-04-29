@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class MapViewControllerViewModel: ViewModel {
+class MapViewControllerViewModel: ViewModelValidation {
 
     var isValid: Bool {
         

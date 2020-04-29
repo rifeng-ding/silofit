@@ -92,7 +92,7 @@ class MapViewController: BaseViewController {
     }
 
     private func logout() {
-        switch AuthenticationManager.shared.logout() {
+        switch FirebaseAuthService.shared.logout() {
         case .success(_):
             self.dismiss(animated: true, completion: nil)
         case .failure(let error):

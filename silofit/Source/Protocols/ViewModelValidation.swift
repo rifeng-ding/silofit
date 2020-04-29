@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  ViewModelValidation.swift
 //  silofit
 //
 //  Created by Rifeng Ding on 2020-04-23.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ViewModel {
+protocol ViewModelValidation {
 
     /// A one-stop flag to indicate whether the view model is valid.
     var isValid: Bool { get }
