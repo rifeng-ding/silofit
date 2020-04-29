@@ -47,27 +47,35 @@ final class FirebaseAuthService: AuthService {
 
     func createAccount(withEmail email: String,
                        password: String,
-                       completion: @escaping ((Error?) -> Void)) {
+                       completion: @escaping ((Result<Void, Error>) -> Void)) {
 
         Auth.auth().createUser(
             withEmail: email,
             password: password
         ) { (_, error) in
 
-            completion(error)
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
         }
     }
 
     func login(withEmail email: String,
                password: String,
-               completion: @escaping ((Error?) -> Void)) {
+               completion: @escaping ((Result<Void, Error>) -> Void)) {
 
         Auth.auth().signIn(
             withEmail: email,
             password: password
         ) { (_, error) in
 
-            completion(error)
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
         }
     }
 }

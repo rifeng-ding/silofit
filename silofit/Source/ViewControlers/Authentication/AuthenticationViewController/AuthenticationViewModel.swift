@@ -44,23 +44,23 @@ class AuthenticationViewModel {
 
     func createAccount(withEmail email:String,
                        password: String,
-                       completion: @escaping ((Error?) -> Void)) {
+                       completion: @escaping ((Result<Void, Error>) -> Void)) {
         self.authService.createAccount(
             withEmail: email,
             password: password
-        ) { (error) in
-            completion(error)
+        ) { (result) in
+            completion(result)
         }
     }
     
     func login(withEmail email:String,
                password: String,
-               completion: @escaping ((Error?) -> Void)) {
+               completion: @escaping ((Result<Void, Error>) -> Void)) {
         self.authService.login(
             withEmail: email,
             password: password
-        ) { (error) in
-            completion(error)
+        ) { (result) in
+            completion(result)
         }
     }
 }
