@@ -11,7 +11,7 @@ import UIKit
 class AuthOptionsViewController: BaseViewController {
 
     // Didn't create a view model for this controller,
-    // because this is the only dependency.
+    // because authService is the only dependency.
     var authService: AuthService
     
     private let loginButton: StyledButton = {
@@ -32,6 +32,23 @@ class AuthOptionsViewController: BaseViewController {
 
         self.view.backgroundColor = StyleColor.background
 
+        let titleLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = StyleFont.title
+        titleLabel.text = AppInfoUtility.appName
+        self.view.addSubview(titleLabel)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            NSLayoutConstraint(item: titleLabel,
+                               attribute: .centerY,
+                               relatedBy: .equal,
+                               toItem: self.view,
+                               attribute: .centerY,
+                               multiplier: 0.5,
+                               constant: 0)
+        ])
+        
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -43,16 +60,18 @@ class AuthOptionsViewController: BaseViewController {
         stackView.addArrangedSubview(self.loginButton)
 
         self.view.addSubview(stackView)
-        stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,
-                                           constant: Spacing.large).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,
-                                            constant: -Spacing.large).isActive = true
-
         let verticalSpacing = self.keyWindowSafeAreaInsets.bottom == 0 ? Spacing.large : 0
-        stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                          constant: -verticalSpacing).isActive = true
-        stackView.topAnchor.constraint(greaterThanOrEqualTo: self.view.safeAreaLayoutGuide.topAnchor,
-                                       constant: verticalSpacing).isActive = true
+
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,
+                                               constant: Spacing.large),
+            stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,
+                                                constant: -Spacing.large),
+            stackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
+                                              constant: -verticalSpacing),
+            stackView.topAnchor.constraint(greaterThanOrEqualTo: self.view.safeAreaLayoutGuide.topAnchor,
+                                           constant: verticalSpacing)
+        ])
     }
 
     init(authService: AuthService? = nil) {
@@ -84,7 +103,12 @@ class AuthOptionsViewController: BaseViewController {
         self.loginButton.isEnabled = false
         self.signupButton.isEnabled = false
 
-        let mapViewController = MapViewController(authService: self.authService, spaceService: FirebaseSpaceService())
+        // NOTE: spaceService is hard-coded to FirebaseSpaceService.
+        // For UI test, the entire authenticaiton step should be skipped,
+        // i.e. MapViewController should be initialized directly.
+        let viewModel = MapViewModel(authService: self.authService,
+                                     spaceService: FirebaseSpaceService())
+        let mapViewController = MapViewController(viewModel: viewModel)
         let navigationViewController = StyledNavigationController(rootViewController: mapViewController)
         navigationViewController.modalTransitionStyle = .flipHorizontal
         navigationViewController.modalPresentationStyle = .fullScreen
@@ -108,8 +132,8 @@ class AuthOptionsViewController: BaseViewController {
         guard let authMode = mode else {
             return
         }
-        let authViewController = AuthenticationViewController(mode: authMode,
-                                                              authService: self.authService)
+        let viewModel = AuthenticationViewModel(mode: authMode, authService: self.authService)
+        let authViewController = AuthenticationViewController(viewModel: viewModel)
         self.present(StyledNavigationController(rootViewController: authViewController),
                      animated: true,
                      completion: nil)

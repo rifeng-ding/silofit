@@ -11,7 +11,7 @@ import MapKit
 
 class MapViewController: BaseViewController {
 
-    var viewModel: MapViewControllerViewModel
+    var viewModel: MapViewModel
 
     let locationManager = CLLocationManager()
     let defaultCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -23,10 +23,9 @@ class MapViewController: BaseViewController {
         return mapView
     }()
 
-    init(authService: AuthService, spaceService: SpaceService) {
+    init(viewModel: MapViewModel) {
         
-        self.viewModel = MapViewControllerViewModel(authService: authService,
-                                                    spaceService: spaceService)
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -35,25 +34,27 @@ class MapViewController: BaseViewController {
     }
     
     override func setupUI() {
+        
+        self.title = self.viewModel.title
 
         self.mapView.delegate = self
         self.view.addSubview(self.mapView)
-        self.mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        self.mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        self.mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.mapView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        ])
 
-        let logoutButton = UIBarButtonItem(title: "Logout",
-                                           style: .plain,
-                                           target: self,
-                                           action: #selector(logoutButtonTouchUpInside))
-        self.navigationItem.leftBarButtonItem = logoutButton
-
-        let listViewButton = UIBarButtonItem(title: "List",
-                                           style: .plain,
-                                           target: self,
-                                           action: #selector(listViewButtonTouchUpInside))
-        self.navigationItem.rightBarButtonItem = listViewButton
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout",
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(logoutButtonTouchUpInside))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "List",
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(listViewButtonTouchUpInside))
     }
 
     override func viewDidLoad() {
@@ -143,8 +144,9 @@ class MapViewController: BaseViewController {
 
     @objc private func listViewButtonTouchUpInside() {
         
-        let listViewController = SpaceListViewController(spaces: self.viewModel.spaces,
-                                                         currentCoordinate: self.mapView.userLocation.coordinate)
+        let viewModel = SpaceListViewModel(spaces: self.viewModel.spaces,
+                                           currentCoordinate: self.mapView.userLocation.coordinate)
+        let listViewController = SpaceListViewController(viewModel: viewModel)
         let navigationController = StyledNavigationController(rootViewController: listViewController)
         navigationController.modalTransitionStyle = .coverVertical
         navigationController.modalPresentationStyle = .fullScreen

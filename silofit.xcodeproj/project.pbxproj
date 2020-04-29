@@ -12,7 +12,7 @@
 		970EB20C245213A900AB4940 /* StyledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970EB20B245213A900AB4940 /* StyledTextField.swift */; };
 		97DCED5924524CE300706A91 /* SpacePointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5824524CE300706A91 /* SpacePointAnnotation.swift */; };
 		97DCED5B245313FF00706A91 /* SpaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5A245313FF00706A91 /* SpaceListViewController.swift */; };
-		97DCED5E245315F300706A91 /* SpaceListViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5D245315F300706A91 /* SpaceListViewControllerViewModel.swift */; };
+		97DCED5E245315F300706A91 /* SpaceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5D245315F300706A91 /* SpaceListViewModel.swift */; };
 		97DCED602453214600706A91 /* SpaceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED5F2453214600706A91 /* SpaceListCell.swift */; };
 		97DCED622453222400706A91 /* StyleFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED612453222400706A91 /* StyleFont.swift */; };
 		97DCED662453247000706A91 /* TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DCED652453247000706A91 /* TextColor.swift */; };
@@ -42,8 +42,9 @@
 		97E2AB492451148900A3EC25 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB472451148900A3EC25 /* Identifiable.swift */; };
 		97E2AB4B2451176800A3EC25 /* FirebaseSpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4A2451176800A3EC25 /* FirebaseSpaceService.swift */; };
 		97E2AB4E2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */; };
-		97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */; };
+		97E2AB502451C36200A3EC25 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4F2451C36200A3EC25 /* MapViewModel.swift */; };
 		97E2AB522451C7B500A3EC25 /* ViewModelValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB512451C7B500A3EC25 /* ViewModelValidation.swift */; };
+		B414940B245A084200573034 /* AppInfoUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B414940A245A084200573034 /* AppInfoUtility.swift */; };
 		B47718D22459BA2800550671 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D12459BA2800550671 /* AuthenticationViewModel.swift */; };
 		B47718D72459BAE800550671 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D62459BAE800550671 /* AuthService.swift */; };
 		B47718D92459BC1900550671 /* String+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D82459BC1900550671 /* String+Auth.swift */; };
@@ -72,14 +73,14 @@
 		970EB20B245213A900AB4940 /* StyledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledTextField.swift; sourceTree = "<group>"; };
 		97DCED5824524CE300706A91 /* SpacePointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePointAnnotation.swift; sourceTree = "<group>"; };
 		97DCED5A245313FF00706A91 /* SpaceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListViewController.swift; sourceTree = "<group>"; };
-		97DCED5D245315F300706A91 /* SpaceListViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListViewControllerViewModel.swift; sourceTree = "<group>"; };
+		97DCED5D245315F300706A91 /* SpaceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListViewModel.swift; sourceTree = "<group>"; };
 		97DCED5F2453214600706A91 /* SpaceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceListCell.swift; sourceTree = "<group>"; };
 		97DCED612453222400706A91 /* StyleFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleFont.swift; sourceTree = "<group>"; };
 		97DCED652453247000706A91 /* TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColor.swift; sourceTree = "<group>"; };
 		97DCED68245324DD00706A91 /* UIColor+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Style.swift"; sourceTree = "<group>"; };
 		97DCED6A24532B9300706A91 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		97DCED6F24534E5200706A91 /* UIImageView+ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoading.swift"; sourceTree = "<group>"; };
-		97E2AB0024508D4600A3EC25 /* silofit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = silofit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E2AB0024508D4600A3EC25 /* Silofit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Silofit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E2AB0324508D4600A3EC25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionsViewController.swift; sourceTree = "<group>"; };
 		97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,8 +105,9 @@
 		97E2AB472451148900A3EC25 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		97E2AB4A2451176800A3EC25 /* FirebaseSpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSpaceService.swift; sourceTree = "<group>"; };
 		97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
-		97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerViewModel.swift; sourceTree = "<group>"; };
+		97E2AB4F2451C36200A3EC25 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		97E2AB512451C7B500A3EC25 /* ViewModelValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelValidation.swift; sourceTree = "<group>"; };
+		B414940A245A084200573034 /* AppInfoUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoUtility.swift; sourceTree = "<group>"; };
 		B47718D12459BA2800550671 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		B47718D62459BAE800550671 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B47718D82459BC1900550671 /* String+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Auth.swift"; sourceTree = "<group>"; };
@@ -173,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				97DCED5A245313FF00706A91 /* SpaceListViewController.swift */,
-				97DCED5D245315F300706A91 /* SpaceListViewControllerViewModel.swift */,
+				97DCED5D245315F300706A91 /* SpaceListViewModel.swift */,
 				97DCED5F2453214600706A91 /* SpaceListCell.swift */,
 			);
 			path = SpaceListViewController;
@@ -203,7 +205,7 @@
 		97E2AB0124508D4600A3EC25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97E2AB0024508D4600A3EC25 /* silofit.app */,
+				97E2AB0024508D4600A3EC25 /* Silofit.app */,
 				97E2AB1624508D4E00A3EC25 /* silofitTests.xctest */,
 			);
 			name = Products;
@@ -299,8 +301,9 @@
 		97E2AB2D2450946300A3EC25 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				97E2AB372450B86B00A3EC25 /* Style */,
 				97DCED6F24534E5200706A91 /* UIImageView+ImageLoading.swift */,
+				B414940A245A084200573034 /* AppInfoUtility.swift */,
+				97E2AB372450B86B00A3EC25 /* Style */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -319,7 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				97E2AB3A2450B8F700A3EC25 /* MapViewController.swift */,
-				97E2AB4F2451C36200A3EC25 /* MapViewControllerViewModel.swift */,
+				97E2AB4F2451C36200A3EC25 /* MapViewModel.swift */,
 				97E2AB4D2451C34900A3EC25 /* MapViewController+MKMapViewDelegate.swift */,
 				97DCED5824524CE300706A91 /* SpacePointAnnotation.swift */,
 			);
@@ -396,7 +399,7 @@
 				97DCED72245393B800706A91 /* CodableFirebase */,
 			);
 			productName = silofit;
-			productReference = 97E2AB0024508D4600A3EC25 /* silofit.app */;
+			productReference = 97E2AB0024508D4600A3EC25 /* Silofit.app */;
 			productType = "com.apple.product-type.application";
 		};
 		97E2AB1524508D4E00A3EC25 /* silofitTests */ = {
@@ -568,6 +571,7 @@
 				97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */,
 				B47718D22459BA2800550671 /* AuthenticationViewModel.swift in Sources */,
 				97E2AB482451148900A3EC25 /* CaseDefaultCodable.swift in Sources */,
+				B414940B245A084200573034 /* AppInfoUtility.swift in Sources */,
 				97DCED622453222400706A91 /* StyleFont.swift in Sources */,
 				97E2AB0424508D4600A3EC25 /* AppDelegate.swift in Sources */,
 				97E2AB4B2451176800A3EC25 /* FirebaseSpaceService.swift in Sources */,
@@ -576,10 +580,10 @@
 				97DCED6B24532B9300706A91 /* ReusableView.swift in Sources */,
 				970EB20A2452131400AB4940 /* AuthenticationViewController.swift in Sources */,
 				B47718D92459BC1900550671 /* String+Auth.swift in Sources */,
-				97E2AB502451C36200A3EC25 /* MapViewControllerViewModel.swift in Sources */,
+				97E2AB502451C36200A3EC25 /* MapViewModel.swift in Sources */,
 				B48E84BF245867E30001BFCE /* GalleryImageCell.swift in Sources */,
 				97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */,
-				97DCED5E245315F300706A91 /* SpaceListViewControllerViewModel.swift in Sources */,
+				97DCED5E245315F300706A91 /* SpaceListViewModel.swift in Sources */,
 				970EB20C245213A900AB4940 /* StyledTextField.swift in Sources */,
 				97E2AB3B2450B8F700A3EC25 /* MapViewController.swift in Sources */,
 				B48E84BD245866A70001BFCE /* GalleryViewController.swift in Sources */,
@@ -748,7 +752,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rifeng-ding.silofit";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Silofit;
 				PROVISIONING_PROFILE_SPECIFIER = "Development Wildcard";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -770,7 +774,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rifeng-ding.silofit";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Silofit;
 				PROVISIONING_PROFILE_SPECIFIER = "Development Wildcard";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -1,5 +1,5 @@
 //
-//  SpaceListViewControllerViewModel.swift
+//  SpaceListViewModel.swift
 //  silofit
 //
 //  Created by Rifeng Ding on 2020-04-24.
@@ -9,7 +9,7 @@
 import CoreLocation
 import MapKit
 
-class SpaceListViewControllerViewModel: ViewModelValidation {
+class SpaceListViewModel: ViewModelValidation {
 
     var isValid: Bool {
 
@@ -46,12 +46,12 @@ class SpaceListViewControllerViewModel: ViewModelValidation {
         return self.spaces.count
     }
 
-    func nameLabel(at indexPath: IndexPath) -> String? {
+    func nameLabel(for indexPath: IndexPath) -> String? {
 
         return self.spaces[indexPath.item].name
     }
 
-    func distanceLabel(at indexPath: IndexPath) -> String? {
+    func distanceLabel(for indexPath: IndexPath) -> String? {
 
         let space = self.spaces[indexPath.item]
         guard
@@ -65,7 +65,7 @@ class SpaceListViewControllerViewModel: ViewModelValidation {
         return "\(formattedDistance) away"
     }
 
-    func basicInfoLabel(at indexPath: IndexPath) -> String? {
+    func basicInfoLabel(for indexPath: IndexPath) -> String? {
 
         let space = self.spaces[indexPath.item]
         var labelParts = [String]()
@@ -91,7 +91,12 @@ class SpaceListViewControllerViewModel: ViewModelValidation {
         return labelParts.joined(separator: " • ")
     }
 
-    func imageURL(at indexPath: IndexPath) -> URL? {
+    func title(for indexPath: IndexPath) -> String? {
+        
+        return self.spaces[indexPath.item].name
+    }
+    
+    func imageURL(for indexPath: IndexPath) -> URL? {
 
         guard let imageURL = self.spaces[indexPath.item].imageURLs?.first else {
             return nil
@@ -99,7 +104,7 @@ class SpaceListViewControllerViewModel: ViewModelValidation {
         return URL(string: imageURL)
     }
     
-    func imageURLs(at indexPath: IndexPath) -> [URL] {
+    func imageURLs(for indexPath: IndexPath) -> [URL] {
         
         guard let rawimageURLs = self.spaces[indexPath.item].imageURLs else {
             return []
