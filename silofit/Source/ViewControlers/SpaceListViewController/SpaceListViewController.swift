@@ -24,13 +24,12 @@ class SpaceListViewController: BaseViewController {
         return collectionView
     }()
 
-    private(set) var viewModel = SpaceListViewControllerViewModel(spaces: [], currentCoordinate: nil)
+    let viewModel: SpaceListViewModel
 
-    init(spaces: [Space], currentCoordinate: CLLocationCoordinate2D?) {
+    init(viewModel: SpaceListViewModel) {
 
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        self.viewModel = SpaceListViewControllerViewModel(spaces: spaces,
-                                                          currentCoordinate: currentCoordinate)
     }
 
     required init?(coder: NSCoder) {
@@ -45,16 +44,17 @@ class SpaceListViewController: BaseViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.view.addSubview(self.collectionView)
-        self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
 
-        let mapViewButton = UIBarButtonItem(title: "Map",
-                                             style: .plain,
-                                             target: self,
-                                             action: #selector(mapViewButtonTouchUpInside))
-        self.navigationItem.rightBarButtonItem = mapViewButton
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Map",
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(mapViewButtonTouchUpInside))
     }
 
     // MARK: Selector Methods
@@ -74,10 +74,10 @@ extension SpaceListViewController: UICollectionViewDataSource {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpaceListCell.reuseIdentifer,
                                                       for: indexPath) as! SpaceListCell
-        cell.nameLabel.text = self.viewModel.nameLabel(at: indexPath)
-        cell.infoLabel.text = self.viewModel.basicInfoLabel(at: indexPath)
-        cell.distanceLabel.text = self.viewModel.distanceLabel(at: indexPath)
-        cell.imageView.loadImage(from: self.viewModel.imageURL(at: indexPath))
+        cell.nameLabel.text = self.viewModel.nameLabel(for: indexPath)
+        cell.infoLabel.text = self.viewModel.basicInfoLabel(for: indexPath)
+        cell.distanceLabel.text = self.viewModel.distanceLabel(for: indexPath)
+        cell.imageView.loadImage(from: self.viewModel.imageURL(for: indexPath))
         cell.width = collectionView.frame.width
 
         return cell
@@ -88,8 +88,10 @@ extension SpaceListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let imageURLs = self.viewModel.imageURLs(at: indexPath)
-        let galleryViewController = GalleryViewController(imageURLs: imageURLs)
+        let imageURLs = self.viewModel.imageURLs(for: indexPath)
+        let title = self.viewModel.title(for: indexPath)
+        let viewModel = GalleryViewModel(title: title, imageURLs: imageURLs)
+        let galleryViewController = GalleryViewController(viewModel: viewModel)
         self.navigationController?.pushViewController(galleryViewController, animated: true)
     }
 }

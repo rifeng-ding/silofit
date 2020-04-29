@@ -1,5 +1,5 @@
 //
-//  MapViewControllerViewModel.swift
+//  MapViewModel.swift
 //  silofit
 //
 //  Created by Rifeng Ding on 2020-04-23.
@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class MapViewControllerViewModel: ViewModelValidation {
+class MapViewModel: ViewModelValidation {
 
     private(set) var spaces: [Space] = []
     let authService: AuthService
@@ -18,6 +18,11 @@ class MapViewControllerViewModel: ViewModelValidation {
     var isValid: Bool {
         
         return spaces.count > 0
+    }
+    
+    var title: String? {
+        
+        return AppInfoUtility.appName
     }
     
     init(authService: AuthService, spaceService: SpaceService) {

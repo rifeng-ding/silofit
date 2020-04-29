@@ -10,7 +10,7 @@ import UIKit
 
 class GalleryViewController: BaseViewController {
     
-    private(set) var viewModel = GalleryViewModel(imageURLs: [])
+    let viewModel: GalleryViewModel
     private var pageNumberBeforeRotation: Int?
     private var previousPage = 0
     
@@ -43,15 +43,42 @@ class GalleryViewController: BaseViewController {
         return pageControl
     }()
 
-    init(imageURLs: [URL]) {
+    init(viewModel: GalleryViewModel) {
         
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        self.viewModel = GalleryViewModel(imageURLs: imageURLs)
-        self.pageControl.numberOfPages = self.viewModel.imageURLs.count
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setupUI() {
+        
+        self.title = self.viewModel.title
+        
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        self.view.addSubview(self.collectionView)
+        NSLayoutConstraint.activate([
+            self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        
+        self.view.addSubview(self.pageControl)
+        NSLayoutConstraint.activate([
+            self.pageControl.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            self.pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        self.pageControl.numberOfPages = self.viewModel.imageURLs.count
+    }
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        self.navigationItem.backBarButtonItem?.title = nil
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -80,21 +107,6 @@ class GalleryViewController: BaseViewController {
         DispatchQueue.main.async {
             self.scroll(ToPage: self.pageNumberBeforeRotation ?? 0, animated: false)
         }
-    }
-    
-    override func setupUI() {
-        
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
-        self.view.addSubview(self.collectionView)
-        self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-
-        self.view.addSubview(self.pageControl)
-        self.pageControl.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
     
     @objc private func pageControlValueChanged(_ sender: UIPageControl) {
@@ -138,7 +150,7 @@ extension GalleryViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryImageCell.reuseIdentifer, for: indexPath) as! GalleryImageCell
         
-        cell.imageView.loadImage(from: self.viewModel.imageURL(at: indexPath))
+        cell.imageView.loadImage(from: self.viewModel.imageURL(for: indexPath))
         cell.size = collectionView.frame.size
         return cell
     }

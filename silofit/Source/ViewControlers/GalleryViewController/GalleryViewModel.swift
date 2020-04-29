@@ -8,12 +8,14 @@
 
 import Foundation
 
-struct GalleryViewModel {
+class GalleryViewModel {
     
+    let title: String?
     let imageURLs: [URL]
     
-    init(imageURLs: [URL]) {
+    init(title: String?, imageURLs: [URL]) {
         
+        self.title = title
         self.imageURLs = imageURLs
     }
     
@@ -22,7 +24,7 @@ struct GalleryViewModel {
         return self.imageURLs.count
     }
     
-    func imageURL(at indexPath: IndexPath) -> URL {
+    func imageURL(for indexPath: IndexPath) -> URL {
         
         return self.imageURLs[indexPath.row]
     }

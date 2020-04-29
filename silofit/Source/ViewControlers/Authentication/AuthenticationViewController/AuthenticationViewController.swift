@@ -43,9 +43,9 @@ class AuthenticationViewController: BaseViewController {
 
     let actionButton: StyledButton
 
-    init(mode: AuthenticationViewModel.Mode, authService: AuthService) {
+    init(viewModel: AuthenticationViewModel) {
 
-        self.viewModel = AuthenticationViewModel(mode: mode, authService: authService)
+        self.viewModel = viewModel
         
         self.actionButton = StyledButton(style: .dark,
                                          title: self.viewModel.actionButtonTitle)
