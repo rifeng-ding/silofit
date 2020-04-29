@@ -41,8 +41,8 @@ class GalleryImageCell: UICollectionViewCell {
         scrollView.showsVerticalScrollIndicator = true
         scrollView.flashScrollIndicators()
 
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 10.0
+        scrollView.minimumZoomScale = ImageZoomScale.minimum
+        scrollView.maximumZoomScale = ImageZoomScale.maximum
         return scrollView
     }()
     

@@ -72,6 +72,8 @@ class GalleryViewController: BaseViewController {
     
     override func viewDidLayoutSubviews() {
         
+        // TODO: this re-layout is not perfect.
+        // The transition is not smooth.
         super.viewDidLayoutSubviews()
         self.collectionView.collectionViewLayout.invalidateLayout()
         self.collectionView.reloadData()
