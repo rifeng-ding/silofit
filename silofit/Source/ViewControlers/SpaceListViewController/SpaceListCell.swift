@@ -67,7 +67,7 @@ class SpaceListCell: UICollectionViewCell {
 
         super.init(frame: frame)
 
-        self.backgroundColor = StyleColor.background
+        self.backgroundColor = StyleColor.backgroundContent
 
         self.imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 9/16).isActive = true
         self.widthConstraint = self.imageView.widthAnchor.constraint(equalToConstant: 320)

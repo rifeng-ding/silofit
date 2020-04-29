@@ -10,8 +10,31 @@ import UIKit
 
 extension UIColor {
 
-    func highlightedColor(withFactor factor: CGFloat = 0.75) -> UIColor {
+    func highlightedColor(withFactor factor: CGFloat? = nil) -> UIColor {
 
+        let lightModeDefaultFactor: CGFloat = 0.75
+        let darkModeDefalutFactor: CGFloat = 0.25
+        
+        if #available(iOS 13.0, *) {
+            return UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
+                let defaultFactor: CGFloat
+                switch UITraitCollection.userInterfaceStyle {
+                case .dark:
+                    defaultFactor = darkModeDefalutFactor
+                case .light, .unspecified:
+                    defaultFactor = lightModeDefaultFactor
+                @unknown default:
+                    defaultFactor = lightModeDefaultFactor
+                }
+                return self._highlightedColor(withFactor: factor ?? defaultFactor)
+            }
+        }
+        
+        return self._highlightedColor(withFactor: factor ?? lightModeDefaultFactor)
+    }
+    
+    private func _highlightedColor(withFactor factor: CGFloat) -> UIColor {
+        
         var orginalR: CGFloat = 0
         var orginalG: CGFloat = 0
         var orginalB: CGFloat = 0

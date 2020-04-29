@@ -12,6 +12,7 @@ enum StyleColor {
 
     private enum Name: String {
         case background
+        case backgroundContent
         case border
         case light
         case pinRed
@@ -25,6 +26,10 @@ enum StyleColor {
         UIColor(named: Name.background.rawValue)!
     }
 
+    static var backgroundContent: UIColor {
+        UIColor(named: Name.backgroundContent.rawValue)!
+    }
+    
     static var border: UIColor {
         UIColor(named: Name.border.rawValue)!
     }

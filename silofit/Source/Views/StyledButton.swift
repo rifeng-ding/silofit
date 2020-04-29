@@ -52,16 +52,35 @@ class StyledButton: UIButton {
         self.style = style
         super.init(frame: .zero)
 
-        self.setupUI(forStyle: style)
+        self.setupUI()
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setTitle(title, for: .normal)
     }
 
-    private func setupUI(forStyle style: Style) {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.setupColors()
+    }
+    
+    private func setupUI() {
 
         self.layer.cornerRadius = CornerRadius.regular
-        let titleColor = style.titleColor
-        let backgroundColor = style.backgroundColor
+
+        if style.hasBorder {
+            self.layer.borderWidth = BorderWidth.regular
+        }
+
+        self.heightAnchor.constraint(equalToConstant: Self.defaultHeight).isActive = true
+        self.layer.cornerRadius = Self.defaultHeight / 2
+        
+        self.setupColors()
+    }
+    
+    private func setupColors() {
+        
+        let titleColor = self.style.titleColor
+        let backgroundColor = self.style.backgroundColor
         let titleHighlightColor = titleColor.highlightedColor()
         self.setTitleColor(titleColor, for: .normal)
         self.setTitleColor(titleHighlightColor, for: .highlighted)
@@ -71,14 +90,8 @@ class StyledButton: UIButton {
         self.setBackgroundColor(backgroundColor, for: .normal)
         self.setBackgroundColor(backgroundHighlightColor, for: .highlighted)
         self.setBackgroundColor(backgroundHighlightColor, for: .disabled)
-
-        if style.hasBorder {
-            self.layer.borderWidth = BorderWidth.regular
-            self.layer.borderColor = style.titleColor.cgColor
-        }
-
-        self.heightAnchor.constraint(equalToConstant: Self.defaultHeight).isActive = true
-        self.layer.cornerRadius = Self.defaultHeight / 2
+        
+        self.layer.borderColor = self.style.titleColor.cgColor
     }
 
     required init?(coder: NSCoder) {
