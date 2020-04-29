@@ -133,11 +133,18 @@ class AuthenticationViewController: BaseViewController {
         // Firebase is giving meaningful localizedDescription in their errors.
         // So here, no extra error handling is done.
         // The localizedDescription is directly shown in an AlertController.
-        let handleError: (Error) -> Void = { [weak self] (error) in
-            self?.actionButton.isEnabled = true
-            self?.presentAlert(forError: error,
-                               withTitle: "Auth failed",
-                               action: nil)
+        let authResultHandler: (Result<Void, Error>) -> Void = { [weak self] (result) in
+            switch result {
+            case .success():
+                // If auth succeed, AuthenticationManager will notify AuthOptionsViewController
+                // via AuthStateUpdatingDelegate to dismiss AuthenticationViewController/
+                break
+            case .failure(let error):
+                self?.actionButton.isEnabled = true
+                self?.presentAlert(forError: error,
+                                   withTitle: "Auth failed",
+                                   action: nil)
+            }
         }
 
         switch self.viewModel.mode {
@@ -145,25 +152,16 @@ class AuthenticationViewController: BaseViewController {
             self.viewModel.createAccount(
                 withEmail: email,
                 password: password
-            ) { (error) in
-                // If auth succeed, AuthenticationManager will notify AuthOptionsViewController
-                // via AuthStateUpdatingDelegate to dismiss AuthenticationViewController/
-                if let error = error {
-                    handleError(error)
-                }
+            ) { (result) in
+                authResultHandler(result)
             }
         case .login:
             self.viewModel.login(
                 withEmail: email,
                 password: password
-            ) { (error) in
-                // If auth succeed, AuthenticationManager will notify AuthOptionsViewController
-                // via AuthStateUpdatingDelegate to dismiss AuthenticationViewController.
-                if let error = error {
-                    handleError(error)
-                }
+            ) { (result) in
+                authResultHandler(result)
             }
-
         }
     }
 

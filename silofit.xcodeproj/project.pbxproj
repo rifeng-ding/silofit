@@ -25,7 +25,7 @@
 		97E2AB0824508D4600A3EC25 /* AuthOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB0724508D4600A3EC25 /* AuthOptionsViewController.swift */; };
 		97E2AB0D24508D4E00A3EC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB0C24508D4E00A3EC25 /* Assets.xcassets */; };
 		97E2AB1024508D4E00A3EC25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97E2AB0E24508D4E00A3EC25 /* LaunchScreen.storyboard */; };
-		97E2AB1B24508D4E00A3EC25 /* silofitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB1A24508D4E00A3EC25 /* silofitTests.swift */; };
+		97E2AB1B24508D4E00A3EC25 /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB1A24508D4E00A3EC25 /* MapViewModelTests.swift */; };
 		97E2AB2B245091B700A3EC25 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB2A245091B700A3EC25 /* BaseViewController.swift */; };
 		97E2AB2F245094B000A3EC25 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB2E245094B000A3EC25 /* Style.swift */; };
 		97E2AB312450993F00A3EC25 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB302450993F00A3EC25 /* StyledButton.swift */; };
@@ -45,6 +45,10 @@
 		97E2AB502451C36200A3EC25 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB4F2451C36200A3EC25 /* MapViewModel.swift */; };
 		97E2AB522451C7B500A3EC25 /* ViewModelValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E2AB512451C7B500A3EC25 /* ViewModelValidation.swift */; };
 		B414940B245A084200573034 /* AppInfoUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B414940A245A084200573034 /* AppInfoUtility.swift */; };
+		B414940F245A0EB100573034 /* SpaceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B414940E245A0EB100573034 /* SpaceMock.swift */; };
+		B4149411245A0F3300573034 /* MockDataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4149410245A0F3300573034 /* MockDataUtility.swift */; };
+		B4149415245A125C00573034 /* MockSpaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4149414245A125C00573034 /* MockSpaceService.swift */; };
+		B4149417245A128100573034 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4149416245A128100573034 /* MockAuthService.swift */; };
 		B47718D22459BA2800550671 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D12459BA2800550671 /* AuthenticationViewModel.swift */; };
 		B47718D72459BAE800550671 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D62459BAE800550671 /* AuthService.swift */; };
 		B47718D92459BC1900550671 /* String+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47718D82459BC1900550671 /* String+Auth.swift */; };
@@ -87,7 +91,7 @@
 		97E2AB0F24508D4E00A3EC25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E2AB1124508D4E00A3EC25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E2AB1624508D4E00A3EC25 /* silofitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = silofitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97E2AB1A24508D4E00A3EC25 /* silofitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = silofitTests.swift; sourceTree = "<group>"; };
+		97E2AB1A24508D4E00A3EC25 /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
 		97E2AB1C24508D4E00A3EC25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97E2AB2A245091B700A3EC25 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		97E2AB2E245094B000A3EC25 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -108,6 +112,10 @@
 		97E2AB4F2451C36200A3EC25 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		97E2AB512451C7B500A3EC25 /* ViewModelValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelValidation.swift; sourceTree = "<group>"; };
 		B414940A245A084200573034 /* AppInfoUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoUtility.swift; sourceTree = "<group>"; };
+		B414940E245A0EB100573034 /* SpaceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceMock.swift; sourceTree = "<group>"; };
+		B4149410245A0F3300573034 /* MockDataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataUtility.swift; sourceTree = "<group>"; };
+		B4149414245A125C00573034 /* MockSpaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSpaceService.swift; sourceTree = "<group>"; };
+		B4149416245A128100573034 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
 		B47718D12459BA2800550671 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		B47718D62459BAE800550671 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B47718D82459BC1900550671 /* String+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Auth.swift"; sourceTree = "<group>"; };
@@ -224,7 +232,10 @@
 		97E2AB1924508D4E00A3EC25 /* silofitTests */ = {
 			isa = PBXGroup;
 			children = (
-				97E2AB1A24508D4E00A3EC25 /* silofitTests.swift */,
+				B414940D245A0E9E00573034 /* MockData */,
+				B4149413245A123700573034 /* MockServices */,
+				B414940C245A0E8500573034 /* Utility */,
+				B4149412245A121B00573034 /* MapViewModelTests */,
 				97E2AB1C24508D4E00A3EC25 /* Info.plist */,
 			);
 			path = silofitTests;
@@ -327,6 +338,39 @@
 				97DCED5824524CE300706A91 /* SpacePointAnnotation.swift */,
 			);
 			path = MapViewController;
+			sourceTree = "<group>";
+		};
+		B414940C245A0E8500573034 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B4149410245A0F3300573034 /* MockDataUtility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B414940D245A0E9E00573034 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				B414940E245A0EB100573034 /* SpaceMock.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		B4149412245A121B00573034 /* MapViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				97E2AB1A24508D4E00A3EC25 /* MapViewModelTests.swift */,
+			);
+			path = MapViewModelTests;
+			sourceTree = "<group>";
+		};
+		B4149413245A123700573034 /* MockServices */ = {
+			isa = PBXGroup;
+			children = (
+				B4149414245A125C00573034 /* MockSpaceService.swift */,
+				B4149416245A128100573034 /* MockAuthService.swift */,
+			);
+			path = MockServices;
 			sourceTree = "<group>";
 		};
 		B47718D32459BA3000550671 /* AuthenticationViewController */ = {
@@ -597,7 +641,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97E2AB1B24508D4E00A3EC25 /* silofitTests.swift in Sources */,
+				B4149417245A128100573034 /* MockAuthService.swift in Sources */,
+				B4149415245A125C00573034 /* MockSpaceService.swift in Sources */,
+				B4149411245A0F3300573034 /* MockDataUtility.swift in Sources */,
+				B414940F245A0EB100573034 /* SpaceMock.swift in Sources */,
+				97E2AB1B24508D4E00A3EC25 /* MapViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,7 +847,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/silofit.app/silofit";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Silofit.app/Silofit";
 			};
 			name = Debug;
 		};
@@ -821,7 +869,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/silofit.app/silofit";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Silofit.app/Silofit";
 			};
 			name = Release;
 		};

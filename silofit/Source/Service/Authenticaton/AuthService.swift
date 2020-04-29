@@ -22,9 +22,9 @@ protocol AuthService {
     
     func createAccount(withEmail email: String,
                        password: String,
-                       completion: @escaping ((Error?) -> Void))
+                       completion: @escaping ((Result<Void, Error>) -> Void))
     
     func login(withEmail email: String,
                password: String,
-               completion: @escaping ((Error?) -> Void))
+               completion: @escaping ((Result<Void, Error>) -> Void))
 }
