@@ -37,13 +37,6 @@
             BlueprintName = "silofit"
             ReferencedContainer = "container:silofit.xcodeproj">
          </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "97E2AB1524508D4E00A3EC25"
-            BuildableName = "silofitTests.xctest"
-            BlueprintName = "silofitTests"
-            ReferencedContainer = "container:silofit.xcodeproj">
-         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
